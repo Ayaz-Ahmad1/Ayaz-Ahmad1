@@ -19,6 +19,8 @@ I'm a software Engineer working at Cisco.
 </p>
 
 **Tools and Frameworks**
+<img alt="Scrapy" src="https://img.shields.io/badge/Scrapy-1A1A1A?style=flat-square&logo=scrapy&logoColor=white" />
+
 <p>
   <img alt="Django" src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white" />
 <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
