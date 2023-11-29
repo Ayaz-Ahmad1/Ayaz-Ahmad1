@@ -35,6 +35,7 @@ I'm a software Engineer working at Cisco.
 <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
 <img alt="Celery" src="https://img.shields.io/badge/Celery-2C2D72?style=flat-square&logo=celery&logoColor=white" />
 <img alt="Data Visualization" src="https://img.shields.io/badge/Data_Visualization-007ACC?style=flat-square&logo=tableau&logoColor=white" />
+  <br>
 
   <img alt="Heroku" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white" />
   <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
