@@ -20,12 +20,10 @@ I'm a software Engineer working at Cisco.
 
 **Tools and Frameworks**
 <p>
-  <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
-  <img alt="Android Development" src="https://img.shields.io/badge/-Android%20Dev-3DDC84?style=flat-square&logo=android&logoColor=white" />
+  <img alt="Python Backend Development" src="https://img.shields.io/badge/-Android%20Dev-3DDC84?style=flat-square&logo=android&logoColor=white" />
+  <img alt="Web Development" src="https://img.shields.io/badge/-Android%20Dev-3DDC84?style=flat-square&logo=android&logoColor=white" />
   <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
   <img alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
-  <img alt="Cypress" src="https://img.shields.io/badge/-Cypress-17202C?style=flat-square&logo=cypress&logoColor=white" />
-  <img alt="Jest" src="https://img.shields.io/badge/-Jest-C21325?style=flat-square&logo=jest&logoColor=white" />
   <img alt="Heroku" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white" />
   <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
   <img alt="Firebase" src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white" />
