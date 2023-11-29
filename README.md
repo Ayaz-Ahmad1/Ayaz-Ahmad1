@@ -8,9 +8,7 @@ I'm a software Engineer working at Cisco.
 - 🧠 I'm currently learning **React**
 - 💬 Ask me about **Python Web Development**
 
-
 <img alt="skills" src="https://github.com/Ayaz-Ahmad1/Ayaz-Ahmad1/assets/86517672/4bc140dd-fa8f-4d72-8bc4-b9d1e07fd4eb" align="right" height="150">
-"  />
 
 ## 🛠 I'm familiar with
 
