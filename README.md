@@ -30,4 +30,4 @@ I'm a software Engineer working at Cisco.
 
 ## 🔗 Connect With Me
 [![Linkedin Badge](https://img.shields.io/badge/-Ayaz%20Ahmad-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/Ayaz-Ahmad1/)](https://www.linkedin.com/in/Ayaz-Ahmad1/)
-[![Gmail Badge](https://img.shields.io/badge/-Ayaz@Ahmad-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:notayax@gmail.net "Connect via Email")
+[![Gmail Badge](https://img.shields.io/badge/-notAyaz@Gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:notayax@gmail.net "Connect via Email")
