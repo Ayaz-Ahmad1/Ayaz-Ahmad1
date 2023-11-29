@@ -24,7 +24,7 @@ I'm a software Engineer working at Cisco.
 <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
 <img alt="Scrapy" src="https://img.shields.io/badge/Scrapy-1A1A1A?style=flat-square&logo=scrapy&logoColor=white" />
 <img alt="Django Rest Framework" src="https://img.shields.io/badge/Django_Rest_Framework-092E20?style=flat-square&logo=django&logoColor=white" />
-
+<br>
 <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
   <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
   <img alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
