@@ -9,7 +9,11 @@ I'm a software Engineer working at Cisco.
 - 💬 Ask me about **Python Web Development**
 - 📫 Reach me through [LinkedIn](https:///)
 
+
+<img src="https://raw.githubusercontent.com/msindev/msindev/main/images/skills.png" align="right" height="150" />
+
 ## 🛠 I'm familiar with
+
 **Programming Languages**
 <p>
   <img alt="C" src="https://img.shields.io/badge/-C-A8B9CC?style=flat-square&logo=C&logoColor=white" />
