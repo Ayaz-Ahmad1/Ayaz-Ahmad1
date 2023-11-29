@@ -4,7 +4,7 @@
 
 ## 🚀 About Me
 I'm a software Engineer working at Cisco.
-- 👩‍💻 I'm currently working on **Python (Django, Flask tornado)**
+- 👩‍💻 I'm currently working on **Python (Django, Flask, tornado)**
 - 🧠 I'm currently learning **React**
 - 💬 Ask me about **Python Web Development**
 
