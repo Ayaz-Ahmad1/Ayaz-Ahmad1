@@ -29,6 +29,6 @@ I'm a software Engineer working at Cisco.
 </p>
 
 ## 🔗 Connect With Me
-[![Linkedin Badge](https://img.shields.io/badge/-Mohit%20Singh-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/msindev/)](https://www.linkedin.com/in/msindev/)
+[![Linkedin Badge](https://img.shields.io/badge/-Ayaz%20Ahmad-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/Ayaz-Ahmad1/)](https://www.linkedin.com/in/Ayaz-Ahmad1/)
 [![Twitter Badge](https://img.shields.io/badge/-@msindev-1ca0f1?style=flat&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/msindev)](https://twitter.com/msindev)
 [![Gmail Badge](https://img.shields.io/badge/-mohit@penguincoders.net-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:mohit@penguincoders.net "Connect via Email")
