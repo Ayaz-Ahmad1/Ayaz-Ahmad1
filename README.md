@@ -21,13 +21,13 @@ I'm a software Engineer working at Cisco.
 **Tools and Frameworks**
 <p>
   <img alt="Django" src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white" />
+<img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
+<img alt="Scrapy" src="https://img.shields.io/badge/Scrapy-1A1A1A?style=flat-square&logo=scrapy&logoColor=white" />
+<img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
   <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
   <img alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
 <img alt="Elasticsearch" src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" />
 <img alt="Socket.IO" src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socket.io&logoColor=white" />
-<img alt="Flask" src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
-<img alt="Scrapy" src="https://img.shields.io/badge/Scrapy-1A1A1A?style=flat-square&logo=scrapy&logoColor=white" />
-<img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
 <img alt="GraphQL" src="https://img.shields.io/badge/GraphQL-E434AA?style=flat-square&logo=graphql&logoColor=white" />
 <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
 <img alt="Celery" src="https://img.shields.io/badge/Celery-2C2D72?style=flat-square&logo=celery&logoColor=white" />
