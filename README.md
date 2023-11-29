@@ -10,7 +10,8 @@ I'm a software Engineer working at Cisco.
 - 📫 Reach me through [LinkedIn](https:///)
 
 
-<img src="https://raw.githubusercontent.com/msindev/msindev/main/images/skills.png" align="right" height="150" />
+<img src="<img width="225" alt="skills" src="https://github.com/Ayaz-Ahmad1/Ayaz-Ahmad1/assets/86517672/4bc140dd-fa8f-4d72-8bc4-b9d1e07fd4eb">
+" align="right" height="150" />
 
 ## 🛠 I'm familiar with
 
