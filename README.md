@@ -3,7 +3,7 @@
 <h3 align="center">A software developer building stuff, trying to make a little change.</h3>
 
 ## 🚀 About Me
-I'm a software Engineer working at Upwork.
+I'm a software Engineer working in tech industry since 2021.
 - 👩‍💻 I'm currently working on **Python (Django, Flask, Tornado)**
 - 🧠 I'm currently learning **React**
 - 💬 Ask me about **Python Web Development**
