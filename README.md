@@ -49,4 +49,4 @@ I'm a software Engineer working in tech industry since 2021.
 
 ## 🔗 Connect With Me
 [![Linkedin Badge](https://img.shields.io/badge/-Ayaz%20Ahmad-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/Ayaz-Ahmad1/)](https://www.linkedin.com/in/Ayaz-Ahmad1/ "Connect via LinkedIn")
-[![Gmail Badge](https://img.shields.io/badge/-notayax@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:notayax@gmail.net "Connect via Email")
+[![Gmail Badge](https://img.shields.io/badge/-ezeecodes@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:ezeecodes@gmail.net "Connect via Email")
