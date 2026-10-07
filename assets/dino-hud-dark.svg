@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310">
 <defs>
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf6f9"/><stop offset=".6" stop-color="#fbe4ec"/><stop offset="1" stop-color="#ece3f6"/></linearGradient>
-<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6c9"/><stop offset="1" stop-color="#f9b9cc"/></linearGradient>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17142a"/><stop offset=".6" stop-color="#251d3d"/><stop offset="1" stop-color="#3a2748"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe4ec"/><stop offset="1" stop-color="#d8b4e2"/></linearGradient>
 <clipPath id="frame"><rect width="900" height="310" rx="20"/></clipPath>
 <clipPath id="above"><rect width="900" height="278"/></clipPath>
 <style>
-.name{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:#6b4a5e}
+.name{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:#fbe4ec}
 .sub,.cap,.lab,.lg,.num,.small{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif}
-.sub{font-size:13px;fill:#9a7a8c;letter-spacing:3px}
-.cap{font-size:13px;fill:#b07c95}
-.small{font-size:12px;fill:#9a7a8c}
-.lab{font-size:11px;fill:#a88a9b;letter-spacing:.5px}
-.lg{font-size:11px;fill:#7d6272}
-.num{font-size:26px;font-weight:600;fill:#6b4a5e}
+.sub{font-size:13px;fill:#c9aec0;letter-spacing:3px}
+.cap{font-size:13px;fill:#f4a7bb}
+.small{font-size:12px;fill:#c9aec0}
+.lab{font-size:11px;fill:#a993b4;letter-spacing:.5px}
+.lg{font-size:11px;fill:#e2cfdb}
+.num{font-size:26px;font-weight:600;fill:#fbe4ec}
 .dino{fill:#8fd3c1}
 .blush{fill:#f4a7bb}
 .star{fill:#fff3f8;animation:tw 3.2s ease-in-out infinite}
@@ -36,10 +36,10 @@
 </defs>
 <g clip-path="url(#frame)">
 <rect width="900" height="310" fill="url(#sky)"/>
-<g clip-path="url(#above)"><circle cx="760" cy="296" r="78" fill="url(#sun)" opacity=".75"/></g>
-
-<g class="drift1"><g transform="translate(1000,46) scale(1)" fill="#ffffff" opacity=".75"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g><g class="drift2"><g transform="translate(1150,120) scale(0.7)" fill="#ffffff" opacity=".75"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g>
-<line x1="24" y1="278" x2="876" y2="278" stroke="#e7b3c4" stroke-width="1.5" stroke-linecap="round"/>
+<g clip-path="url(#above)"><circle cx="760" cy="296" r="78" fill="url(#sun)" opacity=".35"/></g>
+<circle class="star" cx="60" cy="30" r="1.0" style="animation-delay:0.00s"/><circle class="star" cx="180" cy="160" r="1.4" style="animation-delay:0.37s"/><circle class="star" cx="300" cy="22" r="1.8" style="animation-delay:0.74s"/><circle class="star" cx="420" cy="150" r="1.0" style="animation-delay:1.11s"/><circle class="star" cx="470" cy="34" r="1.4" style="animation-delay:1.48s"/><circle class="star" cx="610" cy="186" r="1.8" style="animation-delay:1.85s"/><circle class="star" cx="700" cy="30" r="1.0" style="animation-delay:2.22s"/><circle class="star" cx="860" cy="110" r="1.4" style="animation-delay:2.59s"/><circle class="star" cx="380" cy="196" r="1.8" style="animation-delay:2.96s"/><circle class="star" cx="250" cy="200" r="1.0" style="animation-delay:0.33s"/><circle class="star" cx="40" cy="196" r="1.4" style="animation-delay:0.70s"/><circle class="star" cx="880" cy="190" r="1.8" style="animation-delay:1.07s"/><circle class="star" cx="560" cy="20" r="1.0" style="animation-delay:1.44s"/><circle class="star" cx="820" cy="24" r="1.4" style="animation-delay:1.81s"/>
+<g class="drift1"><g transform="translate(1000,46) scale(1)" fill="#ffffff" opacity=".10"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g><g class="drift2"><g transform="translate(1150,120) scale(0.7)" fill="#ffffff" opacity=".10"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g>
+<line x1="24" y1="278" x2="876" y2="278" stroke="#7a5878" stroke-width="1.5" stroke-linecap="round"/>
 
 <text class="name" x="40" y="58">Ayaz Ahmad</text>
 <text class="sub" x="42" y="84">PYTHON BACKEND ENGINEER</text>

@@ -1,4 +1,4 @@
-"""Generate assets/dino-hud.svg: a soft, animated pixel-dino banner with live GitHub stats.
+"""Generate assets/dino-hud.svg and dino-hud-dark.svg: a soft, animated pixel-dino banner with live GitHub stats.
 
 Run by .github/workflows/dino-hud.yml with GITHUB_TOKEN set. Use --sample to render
 with placeholder numbers when no token is available.
@@ -11,7 +11,7 @@ import urllib.request
 from xml.sax.saxutils import escape
 
 USER = os.environ.get("GH_USER", "Ayaz-Ahmad1")
-OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "dino-hud.svg")
+ASSETS = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 W, H = 900, 310
 GROUND = 278
@@ -194,13 +194,25 @@ def stat(x, y, value, label):
             f'<text class="lab" x="{x}" y="{y+17}">{label}</text>')
 
 
-def cloud(cx, cy, sc, cls):
-    return (f'<g class="{cls}"><g transform="translate({cx},{cy}) scale({sc})" fill="#ffffff" opacity=".75">'
+def cloud(cx, cy, sc, cls, op):
+    return (f'<g class="{cls}"><g transform="translate({cx},{cy}) scale({sc})" fill="#ffffff" opacity="{op}">'
             f'<ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/>'
             f'<ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g>')
 
 
-def render(langs, s):
+THEMES = {
+    "light": {"sky": ("#fdf6f9", "#fbe4ec", "#ece3f6"), "sun": ("#ffd6c9", "#f9b9cc"), "sunop": ".75",
+              "ink": "#6b4a5e", "soft": "#9a7a8c", "accent": "#b07c95", "muted": "#a88a9b",
+              "legend": "#7d6272", "ground": "#e7b3c4", "cloud": ".75", "stars": 0},
+    "dark": {"sky": ("#17142a", "#251d3d", "#3a2748"), "sun": ("#fbe4ec", "#d8b4e2"), "sunop": ".35",
+             "ink": "#fbe4ec", "soft": "#c9aec0", "accent": "#f4a7bb", "muted": "#a993b4",
+             "legend": "#e2cfdb", "ground": "#7a5878", "cloud": ".10", "stars": 14},
+}
+STAR_SPOTS = [(60, 30), (180, 160), (300, 22), (420, 150), (470, 34), (610, 186), (700, 30), (860, 110),
+              (380, 196), (250, 200), (40, 196), (880, 190), (560, 20), (820, 24)]
+
+
+def render(langs, s, t):
     today = s["today"]
     colors = ["#f4a7bb", "#b8a9e3", "#ffb4a2"]
     flowers = "".join(tulip(200 + 300 * i + 900 * k, colors[i]) for k in (0, 1) for i in range(3))
@@ -214,27 +226,31 @@ def render(langs, s):
              + stat(sx, 128, s["total"], f"contributions since {s['since'].year}")
              + stat(sx + 175, 128, s["current"], f"{days(s['current'])} streak")
              + stat(sx + 270, 128, s["longest"], best))
+    stars = "".join(f'<circle class="star" cx="{x}" cy="{y}" r="{1 + (i % 3) * .4:.1f}" style="animation-delay:{i * .37 % 3:.2f}s"/>'
+                    for i, (x, y) in enumerate(STAR_SPOTS[:t["stars"]]))
     dino_h = (len(BODY) + 3) * PX
     hearts = "".join(f'<g class="float" style="animation-delay:{d}s">{heart(x, GROUND - dino_h - 8, sc, c)}</g>'
                      for x, d, sc, c in [(160, 0, 1, "#f4a7bb"), (172, 1.5, .8, "#e89bb5"), (150, 3, .9, "#f7b9c9")])
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
 <defs>
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf6f9"/><stop offset=".6" stop-color="#fbe4ec"/><stop offset="1" stop-color="#ece3f6"/></linearGradient>
-<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6c9"/><stop offset="1" stop-color="#f9b9cc"/></linearGradient>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t['sky'][0]}"/><stop offset=".6" stop-color="{t['sky'][1]}"/><stop offset="1" stop-color="{t['sky'][2]}"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t['sun'][0]}"/><stop offset="1" stop-color="{t['sun'][1]}"/></linearGradient>
 <clipPath id="frame"><rect width="{W}" height="{H}" rx="20"/></clipPath>
 <clipPath id="above"><rect width="{W}" height="{GROUND}"/></clipPath>
 <style>
-.name{{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:#6b4a5e}}
+.name{{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:{t['ink']}}}
 .sub,.cap,.lab,.lg,.num,.small{{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif}}
-.sub{{font-size:13px;fill:#9a7a8c;letter-spacing:3px}}
-.cap{{font-size:13px;fill:#b07c95}}
-.small{{font-size:12px;fill:#9a7a8c}}
-.lab{{font-size:11px;fill:#a88a9b;letter-spacing:.5px}}
-.lg{{font-size:11px;fill:#7d6272}}
-.num{{font-size:26px;font-weight:600;fill:#6b4a5e}}
+.sub{{font-size:13px;fill:{t['soft']};letter-spacing:3px}}
+.cap{{font-size:13px;fill:{t['accent']}}}
+.small{{font-size:12px;fill:{t['soft']}}}
+.lab{{font-size:11px;fill:{t['muted']};letter-spacing:.5px}}
+.lg{{font-size:11px;fill:{t['legend']}}}
+.num{{font-size:26px;font-weight:600;fill:{t['ink']}}}
 .dino{{fill:#8fd3c1}}
 .blush{{fill:#f4a7bb}}
+.star{{fill:#fff3f8;animation:tw 3.2s ease-in-out infinite}}
+@keyframes tw{{0%,100%{{opacity:.25}}50%{{opacity:.95}}}}
 .world{{animation:scroll 9s linear infinite}}
 @keyframes scroll{{from{{transform:translateX(0)}}to{{transform:translateX(-900px)}}}}
 .jumper{{animation:jump 9s linear infinite}}
@@ -254,9 +270,10 @@ def render(langs, s):
 </defs>
 <g clip-path="url(#frame)">
 <rect width="{W}" height="{H}" fill="url(#sky)"/>
-<g clip-path="url(#above)"><circle cx="760" cy="{GROUND + 18}" r="78" fill="url(#sun)" opacity=".75"/></g>
-{cloud(1000, 46, 1, "drift1")}{cloud(1150, 120, .7, "drift2")}
-<line x1="24" y1="{GROUND}" x2="{W - 24}" y2="{GROUND}" stroke="#e7b3c4" stroke-width="1.5" stroke-linecap="round"/>
+<g clip-path="url(#above)"><circle cx="760" cy="{GROUND + 18}" r="78" fill="url(#sun)" opacity="{t['sunop']}"/></g>
+{stars}
+{cloud(1000, 46, 1, "drift1", t["cloud"])}{cloud(1150, 120, .7, "drift2", t["cloud"])}
+<line x1="24" y1="{GROUND}" x2="{W - 24}" y2="{GROUND}" stroke="{t['ground']}" stroke-width="1.5" stroke-linecap="round"/>
 
 <text class="name" x="40" y="58">Ayaz Ahmad</text>
 <text class="sub" x="42" y="84">PYTHON BACKEND ENGINEER</text>
@@ -280,6 +297,8 @@ if __name__ == "__main__":
         langs, stats = SAMPLE
     else:
         langs, stats = fetch_stats(os.environ["GITHUB_TOKEN"])
-    with open(OUT, "w", encoding="utf-8", newline="\n") as f:
-        f.write(render(langs, stats))
-    print(f"wrote {os.path.normpath(OUT)}: {len(langs)} languages, {stats['total']} contributions")
+    for name, suffix in (("light", ""), ("dark", "-dark")):
+        out = os.path.join(ASSETS, f"dino-hud{suffix}.svg")
+        with open(out, "w", encoding="utf-8", newline="\n") as f:
+            f.write(render(langs, stats, THEMES[name]))
+        print(f"wrote {os.path.normpath(out)}: {len(langs)} languages, {stats['total']} contributions")
