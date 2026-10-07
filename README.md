@@ -155,16 +155,9 @@ A Flask backend that powers a campaign automation dashboard integrated with **Go
 - Deployed on **DigitalOcean** behind **Gunicorn**, with frontend and backend hosted separately via CORS
 - Fixed real production problems: **504 Gateway Timeouts, CORS errors, RQ worker "Broken pipe" failures**
 
-```mermaid
-flowchart LR
-    UI["Dashboard Frontend"] -->|"CORS + REST"| API["Flask API on Gunicorn"]
-    API --> DB[("MongoDB")]
-    API -->|"enqueue"| Q[("Redis")]
-    Q --> W["RQ Workers"]
-    W -->|"scheduled jobs"| GHL["GoHighLevel / LeadConnector API"]
-    W --> DB
-    Q --> MON["rq-dashboard"]
-```
+<p align="center">
+  <img src="assets/automation-architecture.svg" alt="Architecture: dashboard frontend calls the Flask API, which uses MongoDB and enqueues jobs in Redis; RQ workers run scheduled jobs against the GoHighLevel API; rq-dashboard monitors the queue" width="100%" />
+</p>
 
 ### 🔐 Secure File API — Flask
 A Flask MVC application for secure file management.

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 380" width="1080" height="380" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b9bb4"/>
+    </marker>
+    <style>
+      .edge { stroke: #8b9bb4; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .lbl  { font-size: 13px; fill: #c9d1d9; }
+      .lblbg { fill: #1a1b27; }
+      .name { font-size: 16px; font-weight: 600; fill: #ffffff; }
+      .sub  { font-size: 12px; fill: #dbe4f0; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1080" height="380" rx="18" fill="#1a1b27"/>
+  <text x="540" y="30" text-anchor="middle" font-size="15" fill="#8b9bb4" letter-spacing="1">VERSATILE ACQ · AUTOMATION DASHBOARD</text>
+
+  <!-- edges -->
+  <path class="edge" d="M170,190 L218,190"/>
+  <path class="edge" d="M390,172 L448,90"/>
+  <path class="edge" d="M390,208 L448,288"/>
+  <path class="edge" d="M600,290 L678,214"/>
+  <path class="edge" d="M678,170 L602,92"/>
+  <path class="edge" d="M830,190 L878,190"/>
+  <path class="edge" d="M600,316 L678,326"/>
+
+  <!-- edge labels -->
+  <rect class="lblbg" x="150" y="134" width="90" height="20"/>
+  <text class="lbl" x="195" y="149" text-anchor="middle">CORS + REST</text>
+  <rect class="lblbg" x="378" y="250" width="62" height="20"/>
+  <text class="lbl" x="409" y="265" text-anchor="middle">enqueue</text>
+  <rect class="lblbg" x="606" y="236" width="56" height="20"/>
+  <text class="lbl" x="634" y="251" text-anchor="middle">consume</text>
+  <rect class="lblbg" x="612" y="118" width="48" height="20"/>
+  <text class="lbl" x="636" y="133" text-anchor="middle">writes</text>
+  <rect class="lblbg" x="806" y="134" width="98" height="20"/>
+  <text class="lbl" x="855" y="149" text-anchor="middle">scheduled jobs</text>
+
+  <!-- nodes -->
+  <rect x="20" y="162" width="150" height="56" rx="12" fill="#3b4261"/>
+  <text class="name" x="95" y="186" text-anchor="middle">Dashboard</text>
+  <text class="sub" x="95" y="204" text-anchor="middle">Frontend</text>
+
+  <rect x="220" y="162" width="170" height="56" rx="12" fill="#3776AB"/>
+  <text class="name" x="305" y="186" text-anchor="middle">Flask API</text>
+  <text class="sub" x="305" y="204" text-anchor="middle">Gunicorn · DigitalOcean</text>
+
+  <rect x="450" y="58" width="150" height="56" rx="12" fill="#3f8f3a"/>
+  <text class="name" x="525" y="82" text-anchor="middle">MongoDB</text>
+  <text class="sub" x="525" y="100" text-anchor="middle">indexed CampaignID</text>
+
+  <rect x="450" y="266" width="150" height="56" rx="12" fill="#c0392b"/>
+  <text class="name" x="525" y="290" text-anchor="middle">Redis</text>
+  <text class="sub" x="525" y="308" text-anchor="middle">job queue</text>
+
+  <rect x="680" y="162" width="150" height="56" rx="12" fill="#a8432f"/>
+  <text class="name" x="755" y="186" text-anchor="middle">RQ Workers</text>
+  <text class="sub" x="755" y="204" text-anchor="middle">60s / hourly jobs</text>
+
+  <rect x="880" y="162" width="180" height="56" rx="12" fill="#1b6ac9"/>
+  <text class="name" x="970" y="186" text-anchor="middle">GoHighLevel</text>
+  <text class="sub" x="970" y="204" text-anchor="middle">LeadConnector API</text>
+
+  <rect x="680" y="300" width="150" height="56" rx="12" fill="#5b4b8a"/>
+  <text class="name" x="755" y="324" text-anchor="middle">rq-dashboard</text>
+  <text class="sub" x="755" y="342" text-anchor="middle">queue monitoring</text>
+</svg>
