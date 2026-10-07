@@ -16,27 +16,27 @@
 
 ---
 
-## 🚀 About Me
+## ✦ About Me
 
 <img alt="skills" src="https://github.com/Ayaz-Ahmad1/Ayaz-Ahmad1/assets/86517672/4bc140dd-fa8f-4d72-8bc4-b9d1e07fd4eb" align="right" height="170">
 
 I'm a **Python Backend Engineer** who builds the parts users never see but always rely on: REST APIs, integrations, background jobs, and the databases behind them.
 
-- 🎓 **BS Computer Science (Hons.)**, Hazara University (2021)
-- 💼 Building production Python backends professionally **since 2022**
-- 🔌 Comfortable with **third-party API integrations** (GoHighLevel / LeadConnector and more)
-- ⚙️ I like **automation**: scheduled workflows, queues and workers that keep running unattended
-- 🧯 I've debugged production problems: **504 timeouts, CORS, Redis/RQ workers, DB datatype mismatches**
-- 🌱 Currently leveling up in **FastAPI** and **GenAI-powered backends**
-- 🏢 Co-building an **IT services agency** for international clients
-- 💬 Ask me about **Django, Flask, REST APIs, background jobs and integrations**
+- ✧ **BS Computer Science (Hons.)**, Hazara University (2021)
+- ✧ Building production Python backends professionally **since 2022**
+- ✧ Comfortable with **third-party API integrations** (GoHighLevel / LeadConnector and more)
+- ✧ I like **automation**: scheduled workflows, queues and workers that keep running unattended
+- ✧ I've debugged production problems: **504 timeouts, CORS, Redis/RQ workers, DB datatype mismatches**
+- ✧ Currently leveling up in **FastAPI** and **GenAI-powered backends**
+- ✧ Co-building an **IT services agency** for international clients
+- ✧ Ask me about **Django, Flask, REST APIs, background jobs and integrations**
 
 <br clear="right"/>
 
 ```python
 class AyazAhmad:
     role       = "Python Backend Engineer"
-    location   = "Pakistan 🇵🇰"
+    location   = "Pakistan"
     backend    = ["Django", "DRF", "Flask", "FastAPI"]
     databases  = ["PostgreSQL", "MySQL", "MongoDB"]
     async_work = ["Redis", "Celery", "RQ", "APScheduler"]
@@ -49,18 +49,10 @@ class AyazAhmad:
 
 ---
 
-## 🛠️ Tech Stack
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,django,flask,fastapi,postgres,mysql,mongodb,redis,graphql,elasticsearch&perline=10" />
-    <br/>
-    <img src="https://skillicons.dev/icons?i=docker,linux,git,github,firebase,html,css,js&perline=10" />
-  </a>
-</p>
+## ✦ Tech Stack
 
 <details open>
-<summary><b>🐍 Backend & APIs</b></summary>
+<summary><b>✧ Backend & APIs</b></summary>
 <br/>
 <p>
   <img src="https://img.shields.io/badge/Python-E6E0F8?style=for-the-badge&logo=python&logoColor=5B4B8A" />
@@ -74,7 +66,7 @@ class AyazAhmad:
 </details>
 
 <details open>
-<summary><b>🗄️ Databases & Search</b></summary>
+<summary><b>✧ Databases & Search</b></summary>
 <br/>
 <p>
   <img src="https://img.shields.io/badge/PostgreSQL-E6E0F8?style=for-the-badge&logo=postgresql&logoColor=5B4B8A" />
@@ -85,7 +77,7 @@ class AyazAhmad:
 </details>
 
 <details open>
-<summary><b>⚙️ Background Jobs & Automation</b></summary>
+<summary><b>✧ Background Jobs & Automation</b></summary>
 <br/>
 <p>
   <img src="https://img.shields.io/badge/Redis-E6E0F8?style=for-the-badge&logo=redis&logoColor=5B4B8A" />
@@ -97,7 +89,7 @@ class AyazAhmad:
 </details>
 
 <details open>
-<summary><b>🔐 Security, Testing & Realtime</b></summary>
+<summary><b>✧ Security, Testing & Realtime</b></summary>
 <br/>
 <p>
   <img src="https://img.shields.io/badge/JWT-E6E0F8?style=for-the-badge&logo=jsonwebtokens&logoColor=5B4B8A" />
@@ -110,7 +102,7 @@ class AyazAhmad:
 </details>
 
 <details open>
-<summary><b>☁️ DevOps & Deployment</b></summary>
+<summary><b>✧ DevOps & Deployment</b></summary>
 <br/>
 <p>
   <img src="https://img.shields.io/badge/Linux-E6E0F8?style=for-the-badge&logo=linux&logoColor=5B4B8A" />
@@ -124,9 +116,9 @@ class AyazAhmad:
 
 ---
 
-## 💼 Experience
+## ✦ Experience
 
-**🐍 Python Developer @ Webbuggs** &nbsp;·&nbsp; *Sep 2022 – Oct 2024*
+**✧ Python Developer @ Webbuggs** &nbsp;·&nbsp; *Sep 2022 – Oct 2024*
 
 - Built backend APIs with **Django, Django REST Framework and Flask** (modular services using Blueprints)
 - Designed and managed **GoHighLevel / LeadConnector** API integrations for business data
@@ -134,7 +126,7 @@ class AyazAhmad:
 - Ran automation and scheduled processing with **Redis, Celery, APScheduler** and background workers
 - Handled **production deployment and troubleshooting** to keep APIs and backends reliable
 
-**🌍 Freelance Backend Developer** &nbsp;·&nbsp; *Upwork & Toptal*
+**✧ Freelance Backend Developer** &nbsp;·&nbsp; *Upwork & Toptal*
 
 <p>
   <img src="https://img.shields.io/badge/Upwork-%245K%2B_earned-C9B8F0?style=for-the-badge&logo=upwork&logoColor=5B4B8A&labelColor=E6E0F8" />
@@ -144,9 +136,9 @@ class AyazAhmad:
 
 ---
 
-## 🏗️ Featured Projects
+## ✦ Featured Projects
 
-### ⚡ Versatile Acq — Automation Dashboard
+### ✧ Versatile Acq — Automation Dashboard
 A Flask backend that powers a campaign automation dashboard integrated with **GoHighLevel / LeadConnector**.
 
 - Flask API + **MongoDB**, with indexed `CampaignID` lookups
@@ -159,14 +151,14 @@ A Flask backend that powers a campaign automation dashboard integrated with **Go
   <img src="assets/automation-architecture.svg" alt="Architecture: dashboard frontend calls the Flask API, which uses MongoDB and enqueues jobs in Redis; RQ workers run scheduled jobs against the GoHighLevel API; rq-dashboard monitors the queue" width="100%" />
 </p>
 
-### 🔐 Secure File API — Flask
+### ✧ Secure File API — Flask
 A Flask MVC application for secure file management.
 
 - **PostgreSQL**, **Flask-JWT-Extended** (cookie-based access tokens), **Flask-WTF CSRF**, **bcrypt** hashing
 - File upload, list, download and delete, plus a **token-based password reset** flow
 - **pytest** suite with all tests passing
 
-### 📋 HR Transformation & Evaluation System — Django
+### ✧ HR Transformation & Evaluation System — Django
 A **Django 4.2 / Python 3.10** platform for HR evaluation workflows.
 
 - Role-based access for **Administrators, Companies and Consultants**
@@ -175,13 +167,13 @@ A **Django 4.2 / Python 3.10** platform for HR evaluation workflows.
 
 ---
 
-## 🤖 What I'm Building Next
+## ✦ What I'm Building Next
 
 Combining my backend, API and automation background with **GenAI**: finding problems that keep coming up in client work and turning them into reliable, reusable software.
 
 ---
 
-## 🦖 System Status
+## ✦ System Status
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/dino-hud-dark.svg" />
@@ -196,7 +188,7 @@ Combining my backend, API and automation background with **GenAI**: finding prob
 
 ---
 
-## 🤝 Connect With Me
+## ✦ Connect With Me
 
 <p align="center">
   <a href="https://www.linkedin.com/in/Ayaz-Ahmad1/"><img src="https://img.shields.io/badge/LinkedIn-E6E0F8?style=for-the-badge&logo=linkedin&logoColor=5B4B8A" /></a>
@@ -204,6 +196,6 @@ Combining my backend, API and automation background with **GenAI**: finding prob
   <a href="https://github.com/Ayaz-Ahmad1"><img src="https://img.shields.io/badge/GitHub-E6E0F8?style=for-the-badge&logo=github&logoColor=5B4B8A" /></a>
 </p>
 
-<p align="center"><i>💡 Need a reliable Python backend, API integration or automation pipeline? Let's talk.</i></p>
+<p align="center"><i>✧ Need a reliable Python backend, API integration or automation pipeline? Let's talk.</i></p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:9F8BD6,50:C9B8F0,100:E6E0F8&height=120&section=footer" />
