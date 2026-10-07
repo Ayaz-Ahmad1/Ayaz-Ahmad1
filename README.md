@@ -181,10 +181,13 @@ Combining my backend, API and automation background with **GenAI**: finding prob
 
 ---
 
-## 📊 GitHub Stats
+## 🦖 System Status
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Ayaz-Ahmad1&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
+  <img src="assets/dino-hud.svg" alt="Animated pixel T-rex running across a neon grid, jumping over cacti labeled 504, CORS and BROKEN PIPE" width="100%" />
+</p>
+
+<p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayaz-Ahmad1&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
 </p>
 

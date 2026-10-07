@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05060f"/><stop offset=".75" stop-color="#140a2e"/><stop offset="1" stop-color="#2a0d45"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset="1" stop-color="#ffb627"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="frame"><rect width="900" height="300" rx="18"/></clipPath>
+<clipPath id="sunclip"><rect x="0" y="0" width="900" height="252"/></clipPath>
+<style>
+text{font-family:"JetBrains Mono","Fira Code",Consolas,"Courier New",monospace}
+.title{font-size:24px;font-weight:700;fill:#e6f7ff;letter-spacing:2px}
+.subt{font-size:13px;fill:#7dd3fc;letter-spacing:3px}
+.status{font-size:12px;fill:#39ff9f;letter-spacing:2px}
+.chip{fill:#0b1530;fill-opacity:.85;stroke:#22d3ee;stroke-opacity:.7}
+.ck{font-size:10px;fill:#7dd3fc;letter-spacing:1.5px}
+.cv{font-size:14px;font-weight:700;fill:#ffffff}
+.dino{fill:#39ff9f}
+.cac{fill:#ff2bd6}
+.bug{font-size:11px;font-weight:700;fill:#ffb627;letter-spacing:1px}
+.grid line{stroke:#ff2bd6;stroke-opacity:.35;stroke-width:1}
+.ground{stroke:#22d3ee;stroke-width:2}
+.cap{font-size:11px;fill:#a5b4fc;letter-spacing:2px}
+.star{fill:#fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.world{animation:scroll 9s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-900px)}}
+.jumper{animation:jump 9s linear infinite}
+@keyframes jump{0%{transform:translateY(0)}4.66%{transform:translateY(0)}4.67%{transform:translateY(0);animation-timing-function:ease-out}7.78%{transform:translateY(-78px);animation-timing-function:ease-in}10.89%{transform:translateY(0)}37.99%{transform:translateY(0)}38.00%{transform:translateY(0);animation-timing-function:ease-out}41.11%{transform:translateY(-78px);animation-timing-function:ease-in}44.22%{transform:translateY(0)}71.32%{transform:translateY(0)}71.33%{transform:translateY(0);animation-timing-function:ease-out}74.44%{transform:translateY(-78px);animation-timing-function:ease-in}77.56%{transform:translateY(0)}100%{transform:translateY(0)}}
+.legA{animation:legA .24s steps(1) infinite}
+.legB{animation:legB .24s steps(1) infinite}
+@keyframes legA{0%{opacity:1}50%{opacity:0}}
+@keyframes legB{0%{opacity:0}50%{opacity:1}}
+.dash{stroke:#22d3ee;stroke-width:2;stroke-dasharray:6 22;animation:dash .6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.blink{animation:bl 1.2s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.scan{fill:#22d3ee;opacity:.06;animation:scan 4s linear infinite}
+@keyframes scan{from{transform:translateY(-20px)}to{transform:translateY(300px)}}
+</style>
+</defs>
+<g clip-path="url(#frame)">
+<rect width="900" height="300" fill="url(#sky)"/>
+<circle class="star" cx="40" cy="30" r="1.2" style="animation-delay:0s"/><circle class="star" cx="130" cy="80" r="1" style="animation-delay:1.2s"/><circle class="star" cx="260" cy="22" r="1.4" style="animation-delay:0.6s"/><circle class="star" cx="380" cy="60" r="1" style="animation-delay:2s"/><circle class="star" cx="470" cy="18" r="1.2" style="animation-delay:1.5s"/><circle class="star" cx="560" cy="95" r="1" style="animation-delay:0.3s"/><circle class="star" cx="610" cy="40" r="1.3" style="animation-delay:2.4s"/><circle class="star" cx="720" cy="70" r="1" style="animation-delay:1s"/><circle class="star" cx="800" cy="25" r="1.4" style="animation-delay:1.8s"/><circle class="star" cx="870" cy="110" r="1" style="animation-delay:0.9s"/><circle class="star" cx="330" cy="120" r="1" style="animation-delay:2.8s"/><circle class="star" cx="700" cy="140" r="1.2" style="animation-delay:0.2s"/>
+<g clip-path="url(#sunclip)" opacity=".55"><circle cx="760" cy="262" r="70" fill="url(#sun)"/>
+<g fill="#140a2e"><rect x="680" y="218" width="160" height="4"/><rect x="680" y="230" width="160" height="6"/><rect x="680" y="242" width="160" height="8"/></g></g>
+<g class="grid"><line x1="282" y1="252" x2="-690" y2="300"/><line x1="296" y1="252" x2="-595" y2="300"/><line x1="310" y1="252" x2="-500" y2="300"/><line x1="324" y1="252" x2="-405" y2="300"/><line x1="338" y1="252" x2="-310" y2="300"/><line x1="352" y1="252" x2="-215" y2="300"/><line x1="366" y1="252" x2="-120" y2="300"/><line x1="380" y1="252" x2="-25" y2="300"/><line x1="394" y1="252" x2="70" y2="300"/><line x1="408" y1="252" x2="165" y2="300"/><line x1="422" y1="252" x2="260" y2="300"/><line x1="436" y1="252" x2="355" y2="300"/><line x1="450" y1="252" x2="450" y2="300"/><line x1="464" y1="252" x2="545" y2="300"/><line x1="478" y1="252" x2="640" y2="300"/><line x1="492" y1="252" x2="735" y2="300"/><line x1="506" y1="252" x2="830" y2="300"/><line x1="520" y1="252" x2="925" y2="300"/><line x1="534" y1="252" x2="1020" y2="300"/><line x1="548" y1="252" x2="1115" y2="300"/><line x1="562" y1="252" x2="1210" y2="300"/><line x1="576" y1="252" x2="1305" y2="300"/><line x1="590" y1="252" x2="1400" y2="300"/><line x1="604" y1="252" x2="1495" y2="300"/><line x1="618" y1="252" x2="1590" y2="300"/><line x1="0" y1="258" x2="900" y2="258"/><line x1="0" y1="266" x2="900" y2="266"/><line x1="0" y1="278" x2="900" y2="278"/><line x1="0" y1="294" x2="900" y2="294"/></g>
+<line class="ground" x1="0" y1="252" x2="900" y2="252" filter="url(#glow)"/>
+<line class="dash" x1="0" y1="258" x2="900" y2="258"/>
+
+<text class="title" x="32" y="48" filter="url(#glow)">AYAZ.AHMAD<tspan fill="#ff2bd6">://</tspan>BACKEND</text>
+<text class="subt" x="32" y="72">PYTHON BACKEND ENGINEER</text>
+<text class="status" x="32" y="96"><tspan class="blink">●</tspan> SYSTEM ONLINE · APIs · QUEUES · INTEGRATIONS</text>
+<text class="cap" x="32" y="122">&gt; jumping over production bugs since 2022<tspan class="blink">_</tspan></text>
+<g transform="translate(575,62)"><rect class="chip" width="69" height="44" rx="8"/><text class="ck" x="13" y="18">SINCE</text><text class="cv" x="13" y="36">2022</text></g><g transform="translate(654.0,62)"><rect class="chip" width="78" height="44" rx="8"/><text class="ck" x="13" y="18">TOPTAL</text><text class="cv" x="13" y="36">$50K+</text></g><g transform="translate(741.6,62)"><rect class="chip" width="112" height="44" rx="8"/><text class="ck" x="13" y="18">UPWORK JSS</text><text class="cv" x="13" y="36">100%</text></g>
+
+<g class="world" filter="url(#glow)"><g transform="translate(200,0)"><rect class="cac" x="-7" y="204" width="14" height="48" rx="3"/><rect class="cac" x="-19" y="218" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="232" width="14" height="7" rx="2"/><rect class="cac" x="11" y="212" width="8" height="18" rx="3"/><rect class="cac" x="5" y="225" width="14" height="7" rx="2"/><text class="bug" x="0" y="194" text-anchor="middle">504</text></g><g transform="translate(500,0)"><rect class="cac" x="-7" y="210" width="14" height="42" rx="3"/><rect class="cac" x="-19" y="224" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="238" width="14" height="7" rx="2"/><rect class="cac" x="11" y="218" width="8" height="18" rx="3"/><rect class="cac" x="5" y="231" width="14" height="7" rx="2"/><text class="bug" x="0" y="200" text-anchor="middle">CORS</text></g><g transform="translate(800,0)"><rect class="cac" x="-7" y="200" width="14" height="52" rx="3"/><rect class="cac" x="-19" y="214" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="228" width="14" height="7" rx="2"/><rect class="cac" x="11" y="208" width="8" height="18" rx="3"/><rect class="cac" x="5" y="221" width="14" height="7" rx="2"/><text class="bug" x="0" y="190" text-anchor="middle">BROKEN PIPE</text></g><g transform="translate(1100,0)"><rect class="cac" x="-7" y="204" width="14" height="48" rx="3"/><rect class="cac" x="-19" y="218" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="232" width="14" height="7" rx="2"/><rect class="cac" x="11" y="212" width="8" height="18" rx="3"/><rect class="cac" x="5" y="225" width="14" height="7" rx="2"/><text class="bug" x="0" y="194" text-anchor="middle">504</text></g><g transform="translate(1400,0)"><rect class="cac" x="-7" y="210" width="14" height="42" rx="3"/><rect class="cac" x="-19" y="224" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="238" width="14" height="7" rx="2"/><rect class="cac" x="11" y="218" width="8" height="18" rx="3"/><rect class="cac" x="5" y="231" width="14" height="7" rx="2"/><text class="bug" x="0" y="200" text-anchor="middle">CORS</text></g><g transform="translate(1700,0)"><rect class="cac" x="-7" y="200" width="14" height="52" rx="3"/><rect class="cac" x="-19" y="214" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="228" width="14" height="7" rx="2"/><rect class="cac" x="11" y="208" width="8" height="18" rx="3"/><rect class="cac" x="5" y="221" width="14" height="7" rx="2"/><text class="bug" x="0" y="190" text-anchor="middle">BROKEN PIPE</text></g></g>
+<g transform="translate(96,180)" filter="url(#glow)"><g class="jumper"><g class="dino">
+<rect x="40" y="0" width="32" height="4"/><rect x="36" y="4" width="8" height="4"/><rect x="48" y="4" width="24" height="4"/><rect x="36" y="8" width="36" height="4"/><rect x="36" y="12" width="36" height="4"/><rect x="36" y="16" width="20" height="4"/><rect x="36" y="20" width="28" height="4"/><rect x="0" y="24" width="4" height="4"/><rect x="32" y="24" width="20" height="4"/><rect x="0" y="28" width="4" height="4"/><rect x="24" y="28" width="28" height="4"/><rect x="0" y="32" width="8" height="4"/><rect x="20" y="32" width="40" height="4"/><rect x="0" y="36" width="12" height="4"/><rect x="16" y="36" width="36" height="4"/><rect x="56" y="36" width="4" height="4"/><rect x="0" y="40" width="56" height="4"/><rect x="4" y="44" width="48" height="4"/><rect x="8" y="48" width="40" height="4"/><rect x="12" y="52" width="32" height="4"/><rect x="16" y="56" width="24" height="4"/><g class="legA"><rect x="16" y="60" width="8" height="4"/><rect x="36" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="40" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="40" y="68" width="8" height="4"/></g><g class="legB"><rect x="16" y="60" width="8" height="4"/><rect x="28" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="36" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="36" y="68" width="8" height="4"/></g>
+</g></g></g>
+<rect class="scan" x="0" y="0" width="900" height="14"/>
+</g>
+<rect x="1" y="1" width="898" height="298" rx="17" fill="none" stroke="#22d3ee" stroke-opacity=".5" stroke-width="2"/>
+</svg>
