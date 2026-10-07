@@ -1,70 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" width="900" height="290">
 <defs>
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05060f"/><stop offset=".75" stop-color="#140a2e"/><stop offset="1" stop-color="#2a0d45"/></linearGradient>
-<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset="1" stop-color="#ffb627"/></linearGradient>
-<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<clipPath id="frame"><rect width="900" height="400" rx="18"/></clipPath>
-<clipPath id="sunclip"><rect x="0" y="0" width="900" height="350"/></clipPath>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf6f9"/><stop offset=".6" stop-color="#fbe4ec"/><stop offset="1" stop-color="#ece3f6"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6c9"/><stop offset="1" stop-color="#f9b9cc"/></linearGradient>
+<clipPath id="frame"><rect width="900" height="290" rx="20"/></clipPath>
+<clipPath id="above"><rect width="900" height="258"/></clipPath>
 <style>
-text{font-family:"JetBrains Mono","Fira Code",Consolas,"Courier New",monospace}
-.title{font-size:24px;font-weight:700;fill:#e6f7ff;letter-spacing:2px}
-.subt{font-size:13px;fill:#7dd3fc;letter-spacing:3px}
-.status{font-size:12px;fill:#39ff9f;letter-spacing:2px}
-.chip{fill:#0b1530;fill-opacity:.85;stroke:#22d3ee;stroke-opacity:.6}
-.ck{font-size:10px;fill:#7dd3fc;letter-spacing:1.5px}
-.cv{font-size:14px;font-weight:700;fill:#ffffff}
-.cv2{font-size:24px;font-weight:700;fill:#e6f7ff}
-.hot{fill:#ffb627}
-.ds{font-size:10px;fill:#a5b4fc}
-.lg{font-size:11px;fill:#dbe4f0}
-.dino{fill:#39ff9f}
-.cac{fill:#ff2bd6}
-.bug{font-size:11px;font-weight:700;fill:#ffb627;letter-spacing:1px}
-.grid line{stroke:#ff2bd6;stroke-opacity:.35;stroke-width:1}
-.ground{stroke:#22d3ee;stroke-width:2}
-.cap{font-size:11px;fill:#a5b4fc;letter-spacing:2px}
-.star{fill:#fff;animation:tw 3s ease-in-out infinite}
-@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.name{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:#6b4a5e}
+.sub,.cap,.lab,.lg,.num,.small{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif}
+.sub{font-size:13px;fill:#9a7a8c;letter-spacing:3px}
+.cap{font-size:13px;fill:#b07c95}
+.small{font-size:12px;fill:#9a7a8c}
+.lab{font-size:11px;fill:#a88a9b;letter-spacing:.5px}
+.lg{font-size:11px;fill:#7d6272}
+.num{font-size:26px;font-weight:600;fill:#6b4a5e}
+.dino{fill:#8fd3c1}
+.blush{fill:#f4a7bb}
 .world{animation:scroll 9s linear infinite}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-900px)}}
 .jumper{animation:jump 9s linear infinite}
-@keyframes jump{0%{transform:translateY(0)}4.66%{transform:translateY(0)}4.67%{transform:translateY(0);animation-timing-function:ease-out}7.78%{transform:translateY(-72px);animation-timing-function:ease-in}10.89%{transform:translateY(0)}37.99%{transform:translateY(0)}38.00%{transform:translateY(0);animation-timing-function:ease-out}41.11%{transform:translateY(-72px);animation-timing-function:ease-in}44.22%{transform:translateY(0)}71.32%{transform:translateY(0)}71.33%{transform:translateY(0);animation-timing-function:ease-out}74.44%{transform:translateY(-72px);animation-timing-function:ease-in}77.56%{transform:translateY(0)}100%{transform:translateY(0)}}
-.legA{animation:legA .24s steps(1) infinite}
-.legB{animation:legB .24s steps(1) infinite}
+@keyframes jump{0%{transform:translateY(0)}4.66%{transform:translateY(0)}4.67%{transform:translateY(0);animation-timing-function:ease-out}7.78%{transform:translateY(-54px);animation-timing-function:ease-in}10.89%{transform:translateY(0)}37.99%{transform:translateY(0)}38.00%{transform:translateY(0);animation-timing-function:ease-out}41.11%{transform:translateY(-54px);animation-timing-function:ease-in}44.22%{transform:translateY(0)}71.32%{transform:translateY(0)}71.33%{transform:translateY(0);animation-timing-function:ease-out}74.44%{transform:translateY(-54px);animation-timing-function:ease-in}77.56%{transform:translateY(0)}100%{transform:translateY(0)}}
+.legA{animation:legA .3s steps(1) infinite}
+.legB{animation:legB .3s steps(1) infinite}
 @keyframes legA{0%{opacity:1}50%{opacity:0}}
 @keyframes legB{0%{opacity:0}50%{opacity:1}}
-.flame{animation:fl .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center bottom}
-@keyframes fl{from{opacity:.75}to{opacity:1}}
-.dash{stroke:#22d3ee;stroke-width:2;stroke-dasharray:6 22;animation:dash .6s linear infinite}
-@keyframes dash{to{stroke-dashoffset:-28}}
-.blink{animation:bl 1.2s steps(1) infinite}
-@keyframes bl{50%{opacity:0}}
-.scan{fill:#22d3ee;opacity:.06;animation:scan 4s linear infinite}
-@keyframes scan{from{transform:translateY(-20px)}to{transform:translateY(400px)}}
+.float{opacity:0;animation:float 4.5s ease-out infinite}
+@keyframes float{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(14px,-70px)}}
+.drift1{animation:drift 60s linear infinite}
+.drift2{animation:drift 90s linear infinite;animation-delay:-40s}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1100px)}}
+.beat{animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{opacity:1}15%{opacity:.45}30%{opacity:1}}
 </style>
 </defs>
 <g clip-path="url(#frame)">
-<rect width="900" height="400" fill="url(#sky)"/>
-<circle class="star" cx="40" cy="30" r="1.2" style="animation-delay:0s"/><circle class="star" cx="130" cy="80" r="1" style="animation-delay:1.2s"/><circle class="star" cx="260" cy="22" r="1.4" style="animation-delay:0.6s"/><circle class="star" cx="380" cy="60" r="1" style="animation-delay:2s"/><circle class="star" cx="470" cy="18" r="1.2" style="animation-delay:1.5s"/><circle class="star" cx="420" cy="150" r="1" style="animation-delay:0.3s"/><circle class="star" cx="610" cy="40" r="1.3" style="animation-delay:2.4s"/><circle class="star" cx="870" cy="112" r="1" style="animation-delay:0.9s"/><circle class="star" cx="330" cy="170" r="1" style="animation-delay:2.8s"/><circle class="star" cx="240" cy="230" r="1.2" style="animation-delay:0.2s"/><circle class="star" cx="60" cy="200" r="1" style="animation-delay:1.7s"/><circle class="star" cx="400" cy="280" r="1.1" style="animation-delay:2.1s"/>
-<g clip-path="url(#sunclip)" opacity=".5"><circle cx="760" cy="360" r="70" fill="url(#sun)"/>
-<g fill="#140a2e"><rect x="680" y="316" width="160" height="4"/><rect x="680" y="328" width="160" height="6"/><rect x="680" y="340" width="160" height="8"/></g></g>
-<g class="grid"><line x1="282" y1="350" x2="-690" y2="400"/><line x1="296" y1="350" x2="-595" y2="400"/><line x1="310" y1="350" x2="-500" y2="400"/><line x1="324" y1="350" x2="-405" y2="400"/><line x1="338" y1="350" x2="-310" y2="400"/><line x1="352" y1="350" x2="-215" y2="400"/><line x1="366" y1="350" x2="-120" y2="400"/><line x1="380" y1="350" x2="-25" y2="400"/><line x1="394" y1="350" x2="70" y2="400"/><line x1="408" y1="350" x2="165" y2="400"/><line x1="422" y1="350" x2="260" y2="400"/><line x1="436" y1="350" x2="355" y2="400"/><line x1="450" y1="350" x2="450" y2="400"/><line x1="464" y1="350" x2="545" y2="400"/><line x1="478" y1="350" x2="640" y2="400"/><line x1="492" y1="350" x2="735" y2="400"/><line x1="506" y1="350" x2="830" y2="400"/><line x1="520" y1="350" x2="925" y2="400"/><line x1="534" y1="350" x2="1020" y2="400"/><line x1="548" y1="350" x2="1115" y2="400"/><line x1="562" y1="350" x2="1210" y2="400"/><line x1="576" y1="350" x2="1305" y2="400"/><line x1="590" y1="350" x2="1400" y2="400"/><line x1="604" y1="350" x2="1495" y2="400"/><line x1="618" y1="350" x2="1590" y2="400"/><line x1="0" y1="356" x2="900" y2="356"/><line x1="0" y1="364" x2="900" y2="364"/><line x1="0" y1="376" x2="900" y2="376"/><line x1="0" y1="394" x2="900" y2="394"/></g>
-<line class="ground" x1="0" y1="350" x2="900" y2="350" filter="url(#glow)"/>
-<line class="dash" x1="0" y1="356" x2="900" y2="356"/>
+<rect width="900" height="290" fill="url(#sky)"/>
+<g clip-path="url(#above)"><circle cx="760" cy="276" r="78" fill="url(#sun)" opacity=".75"/></g>
+<g class="drift1"><g transform="translate(1000,46) scale(1)" fill="#ffffff" opacity=".75"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g><g class="drift2"><g transform="translate(1150,120) scale(0.7)" fill="#ffffff" opacity=".75"><ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/><ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g>
+<line x1="24" y1="258" x2="876" y2="258" stroke="#e7b3c4" stroke-width="1.5" stroke-linecap="round"/>
 
-<text class="title" x="32" y="48" filter="url(#glow)">AYAZ.AHMAD<tspan fill="#ff2bd6">://</tspan>BACKEND</text>
-<text class="subt" x="32" y="72">PYTHON BACKEND ENGINEER</text>
-<text class="status" x="32" y="96"><tspan class="blink">●</tspan> SYSTEM ONLINE · APIs · QUEUES · INTEGRATIONS</text>
-<text class="cap" x="32" y="122">&gt; jumping over production bugs since 2022<tspan class="blink">_</tspan></text>
-<g transform="translate(575,24)"><rect class="chip" width="69" height="44" rx="8"/><text class="ck" x="13" y="18">SINCE</text><text class="cv" x="13" y="36">2022</text></g><g transform="translate(654,24)"><rect class="chip" width="78" height="44" rx="8"/><text class="ck" x="13" y="18">TOPTAL</text><text class="cv" x="13" y="36">$50K+</text></g><g transform="translate(742,24)"><rect class="chip" width="112" height="44" rx="8"/><text class="ck" x="13" y="18">UPWORK JSS</text><text class="cv" x="13" y="36">100%</text></g>
-<rect class="chip" x="470" y="96" width="410" height="90" rx="10"/><text class="ck" x="486" y="115">// MOST USED LANGUAGES</text><clipPath id="bar"><rect x="486" y="126" width="378" height="8" rx="4"/></clipPath><g clip-path="url(#bar)"><rect x="486.0" y="126" width="306.4" height="8" fill="#3572A5"/><rect x="792.4" y="126" width="53.6" height="8" fill="#e34c26"/><rect x="846.0" y="126" width="9.5" height="8" fill="#663399"/><rect x="855.5" y="126" width="6.2" height="8" fill="#f1e05a"/><rect x="861.7" y="126" width="1.6" height="8" fill="#89e051"/><rect x="863.3" y="126" width="0.7" height="8" fill="#012456"/></g><circle cx="490.0" cy="148" r="4" fill="#3572A5"/><text class="lg" x="499.0" y="152">Python 81.1%</text><circle cx="616.0" cy="148" r="4" fill="#e34c26"/><text class="lg" x="625.0" y="152">HTML 14.2%</text><circle cx="742.0" cy="148" r="4" fill="#663399"/><text class="lg" x="751.0" y="152">CSS 2.5%</text><circle cx="490.0" cy="165" r="4" fill="#f1e05a"/><text class="lg" x="499.0" y="169">JavaScript 1.6%</text><circle cx="616.0" cy="165" r="4" fill="#89e051"/><text class="lg" x="625.0" y="169">Shell 0.4%</text><circle cx="742.0" cy="165" r="4" fill="#012456"/><text class="lg" x="751.0" y="169">PowerShell 0.2%</text>
-<rect class="chip" x="470" y="196" width="130.0" height="66" rx="10"/><text class="ck" x="535.0" y="213" text-anchor="middle">CONTRIBUTIONS</text><text class="cv2" x="535.0" y="238" text-anchor="middle">246</text><text class="ds" x="535.0" y="254" text-anchor="middle">Jun 26, 2021 – now</text><rect class="chip" x="610.0" y="196" width="130.0" height="66" rx="10"/><text class="ck" x="675.0" y="213" text-anchor="middle">CURRENT STREAK</text><text class="cv2 hot" x="667.0" y="238" text-anchor="middle">1</text><g class="flame" transform="translate(697.0,220)"><path d="M0,16 C-8,12 -7,3 -2,-4 C-1,2 2,3 3,0 C7,5 8,13 0,16Z" fill="#ffb627"/><path d="M0,15 C-3,13 -3,9 0,5 C3,9 3,13 0,15Z" fill="#ff2bd6"/></g><text class="ds" x="675.0" y="254" text-anchor="middle">Oct 7</text><rect class="chip" x="750.0" y="196" width="130.0" height="66" rx="10"/><text class="ck" x="815.0" y="213" text-anchor="middle">LONGEST STREAK</text><text class="cv2" x="815.0" y="238" text-anchor="middle">5</text><text class="ds" x="815.0" y="254" text-anchor="middle">Feb 27 – Mar 3</text>
+<text class="name" x="40" y="66">Ayaz Ahmad</text>
+<text class="sub" x="42" y="94">PYTHON BACKEND ENGINEER</text>
+<text class="cap" x="42" y="120">building calm, reliable backends since 2022 <tspan class="beat" fill="#f4a7bb">&#9829;</tspan></text>
+<text class="small" x="42" y="146">Toptal $50K+  ·  Upwork 100% job success</text>
+<text class="lab" x="520" y="56">languages</text><clipPath id="bar"><rect x="520" y="66" width="340" height="6" rx="3"/></clipPath><g clip-path="url(#bar)"><rect x="520.0" y="66" width="275.4" height="6" fill="#f4a7bb"/><rect x="795.4" y="66" width="48.4" height="6" fill="#b8a9e3"/><rect x="843.7" y="66" width="8.6" height="6" fill="#9fd8cb"/><rect x="852.3" y="66" width="5.6" height="6" fill="#ffd29d"/><rect x="857.9" y="66" width="2.1" height="6" fill="#d9d3e3"/></g><circle cx="523" cy="87" r="3" fill="#f4a7bb"/><text class="lg" x="530" y="91">Python 81%</text><circle cx="605.0" cy="87" r="3" fill="#b8a9e3"/><text class="lg" x="612.0" y="91">HTML 14%</text><circle cx="674.6" cy="87" r="3" fill="#9fd8cb"/><text class="lg" x="681.6" y="91">CSS 3%</text><circle cx="731.8000000000001" cy="87" r="3" fill="#ffd29d"/><text class="lg" x="738.8000000000001" y="91">JavaScript 2%</text><circle cx="832.4000000000001" cy="87" r="3" fill="#d9d3e3"/><text class="lg" x="839.4000000000001" y="91">Other 1%</text><text class="num" x="520" y="140">243</text><text class="lab" x="520" y="157">contributions since 2021</text><text class="num" x="695" y="140">0</text><text class="lab" x="695" y="157">days streak</text><text class="num" x="790" y="140">5</text><text class="lab" x="790" y="157">best · Feb 27</text>
 
-<g class="world" filter="url(#glow)"><g transform="translate(200,0)"><rect class="cac" x="-7" y="302" width="14" height="48" rx="3"/><rect class="cac" x="-19" y="316" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="330" width="14" height="7" rx="2"/><rect class="cac" x="11" y="310" width="8" height="18" rx="3"/><rect class="cac" x="5" y="323" width="14" height="7" rx="2"/><text class="bug" x="0" y="292" text-anchor="middle">504</text></g><g transform="translate(500,0)"><rect class="cac" x="-7" y="308" width="14" height="42" rx="3"/><rect class="cac" x="-19" y="322" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="336" width="14" height="7" rx="2"/><rect class="cac" x="11" y="316" width="8" height="18" rx="3"/><rect class="cac" x="5" y="329" width="14" height="7" rx="2"/><text class="bug" x="0" y="298" text-anchor="middle">CORS</text></g><g transform="translate(800,0)"><rect class="cac" x="-7" y="298" width="14" height="52" rx="3"/><rect class="cac" x="-19" y="312" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="326" width="14" height="7" rx="2"/><rect class="cac" x="11" y="306" width="8" height="18" rx="3"/><rect class="cac" x="5" y="319" width="14" height="7" rx="2"/><text class="bug" x="0" y="288" text-anchor="middle">BROKEN PIPE</text></g><g transform="translate(1100,0)"><rect class="cac" x="-7" y="302" width="14" height="48" rx="3"/><rect class="cac" x="-19" y="316" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="330" width="14" height="7" rx="2"/><rect class="cac" x="11" y="310" width="8" height="18" rx="3"/><rect class="cac" x="5" y="323" width="14" height="7" rx="2"/><text class="bug" x="0" y="292" text-anchor="middle">504</text></g><g transform="translate(1400,0)"><rect class="cac" x="-7" y="308" width="14" height="42" rx="3"/><rect class="cac" x="-19" y="322" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="336" width="14" height="7" rx="2"/><rect class="cac" x="11" y="316" width="8" height="18" rx="3"/><rect class="cac" x="5" y="329" width="14" height="7" rx="2"/><text class="bug" x="0" y="298" text-anchor="middle">CORS</text></g><g transform="translate(1700,0)"><rect class="cac" x="-7" y="298" width="14" height="52" rx="3"/><rect class="cac" x="-19" y="312" width="8" height="20" rx="3"/><rect class="cac" x="-19" y="326" width="14" height="7" rx="2"/><rect class="cac" x="11" y="306" width="8" height="18" rx="3"/><rect class="cac" x="5" y="319" width="14" height="7" rx="2"/><text class="bug" x="0" y="288" text-anchor="middle">BROKEN PIPE</text></g></g>
-<g transform="translate(96,278)" filter="url(#glow)"><g class="jumper"><g class="dino">
-<rect x="40" y="0" width="32" height="4"/><rect x="36" y="4" width="8" height="4"/><rect x="48" y="4" width="24" height="4"/><rect x="36" y="8" width="36" height="4"/><rect x="36" y="12" width="36" height="4"/><rect x="36" y="16" width="20" height="4"/><rect x="36" y="20" width="28" height="4"/><rect x="0" y="24" width="4" height="4"/><rect x="32" y="24" width="20" height="4"/><rect x="0" y="28" width="4" height="4"/><rect x="24" y="28" width="28" height="4"/><rect x="0" y="32" width="8" height="4"/><rect x="20" y="32" width="40" height="4"/><rect x="0" y="36" width="12" height="4"/><rect x="16" y="36" width="36" height="4"/><rect x="56" y="36" width="4" height="4"/><rect x="0" y="40" width="56" height="4"/><rect x="4" y="44" width="48" height="4"/><rect x="8" y="48" width="40" height="4"/><rect x="12" y="52" width="32" height="4"/><rect x="16" y="56" width="24" height="4"/><g class="legA"><rect x="16" y="60" width="8" height="4"/><rect x="36" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="40" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="40" y="68" width="8" height="4"/></g><g class="legB"><rect x="16" y="60" width="8" height="4"/><rect x="28" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="36" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="36" y="68" width="8" height="4"/></g>
-</g></g></g>
-<rect class="scan" x="0" y="0" width="900" height="14"/>
+<g class="world"><g transform="translate(200,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#f4a7bb"/></g><g transform="translate(500,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#b8a9e3"/></g><g transform="translate(800,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#ffb4a2"/></g><g transform="translate(1100,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#f4a7bb"/></g><g transform="translate(1400,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#b8a9e3"/></g><g transform="translate(1700,0)"><path d="M0,258 Q1,246 0,236" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0,252 Q-9,246 -10,238 Q-2,242 0,250Z" fill="#b6dfc6"/><path d="M-7,228 Q-7,238 0,239 Q7,238 7,228 L4,232 L0,226 L-4,232Z" fill="#ffb4a2"/></g></g>
+<g class="float" style="animation-delay:0s"><path transform="translate(160,178) scale(1)" fill="#f4a7bb" d="M0,3 C0,-1 5,-1 5,3 C5,-1 10,-1 10,3 C10,7 5,9 5,11 C5,9 0,7 0,3Z"/></g><g class="float" style="animation-delay:1.5s"><path transform="translate(172,178) scale(0.8)" fill="#e89bb5" d="M0,3 C0,-1 5,-1 5,3 C5,-1 10,-1 10,3 C10,7 5,9 5,11 C5,9 0,7 0,3Z"/></g><g class="float" style="animation-delay:3s"><path transform="translate(150,178) scale(0.9)" fill="#f7b9c9" d="M0,3 C0,-1 5,-1 5,3 C5,-1 10,-1 10,3 C10,7 5,9 5,11 C5,9 0,7 0,3Z"/></g>
+<g transform="translate(96,186)"><g class="jumper">
+<g class="dino"><rect x="40" y="0" width="32" height="4"/><rect x="36" y="4" width="8" height="4"/><rect x="48" y="4" width="24" height="4"/><rect x="36" y="8" width="36" height="4"/><rect x="36" y="12" width="8" height="4"/><rect x="52" y="12" width="20" height="4"/><rect x="36" y="16" width="20" height="4"/><rect x="36" y="20" width="28" height="4"/><rect x="0" y="24" width="4" height="4"/><rect x="32" y="24" width="20" height="4"/><rect x="0" y="28" width="4" height="4"/><rect x="24" y="28" width="28" height="4"/><rect x="0" y="32" width="8" height="4"/><rect x="20" y="32" width="40" height="4"/><rect x="0" y="36" width="12" height="4"/><rect x="16" y="36" width="36" height="4"/><rect x="56" y="36" width="4" height="4"/><rect x="0" y="40" width="56" height="4"/><rect x="4" y="44" width="48" height="4"/><rect x="8" y="48" width="40" height="4"/><rect x="12" y="52" width="32" height="4"/><rect x="16" y="56" width="24" height="4"/><g class="legA"><rect x="16" y="60" width="8" height="4"/><rect x="36" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="40" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="40" y="68" width="8" height="4"/></g><g class="legB"><rect x="16" y="60" width="8" height="4"/><rect x="28" y="60" width="8" height="4"/><rect x="16" y="64" width="4" height="4"/><rect x="36" y="64" width="4" height="4"/><rect x="16" y="68" width="8" height="4"/><rect x="36" y="68" width="8" height="4"/></g></g>
+<g class="blush"><rect x="44" y="12" width="8" height="4"/></g>
+</g></g>
 </g>
-<rect x="1" y="1" width="898" height="398" rx="17" fill="none" stroke="#22d3ee" stroke-opacity=".5" stroke-width="2"/>
 </svg>

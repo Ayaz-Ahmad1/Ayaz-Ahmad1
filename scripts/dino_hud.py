@@ -1,4 +1,4 @@
-"""Generate assets/dino-hud.svg: an animated pixel T-rex banner with live GitHub stats.
+"""Generate assets/dino-hud.svg: a soft, animated pixel-dino banner with live GitHub stats.
 
 Run by .github/workflows/dino-hud.yml with GITHUB_TOKEN set. Use --sample to render
 with placeholder numbers when no token is available.
@@ -13,8 +13,8 @@ from xml.sax.saxutils import escape
 USER = os.environ.get("GH_USER", "Ayaz-Ahmad1")
 OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "dino-hud.svg")
 
-W, H = 900, 400
-GROUND = 350
+W, H = 900, 290
+GROUND = 258
 PX = 4
 
 
@@ -115,30 +115,25 @@ def md(d, today):
     return s if d.year == today.year else f"{s}, {d.year}"
 
 
-def rng(a, b, today):
-    if not a:
-        return md(today, today)
-    return md(a, today) if a == b else f"{md(a, today)} – {md(b, today)}"
-
-
 BODY = [
-    "..........########", ".........##.######", ".........#########", ".........#########",
+    "..........########", ".........##.######", ".........#########", ".........##++#####",
     ".........#####....", ".........#######..", "#.......#####.....", "#.....#######.....",
     "##...##########...", "###.#########.#...", "##############....", ".############.....",
     "..##########......", "...########.......", "....######........",
 ]
 LEG_A = ["....##...##.......", "....#.....#.......", "....##....##......"]
 LEG_B = ["....##.##.........", "....#....#........", "....##...##......."]
+PASTELS = ["#f4a7bb", "#b8a9e3", "#9fd8cb", "#ffd29d", "#a7c7f2", "#d9d3e3"]
 
 
-def pixels(rows, y0):
+def pixels(rows, y0, ch="#"):
     out = []
     for r, row in enumerate(rows):
         c = 0
         while c < len(row):
-            if row[c] == "#":
+            if row[c] == ch:
                 s = c
-                while c < len(row) and row[c] == "#":
+                while c < len(row) and row[c] == ch:
                     c += 1
                 out.append(f'<rect x="{s*PX}" y="{(y0+r)*PX}" width="{(c-s)*PX}" height="{PX}"/>')
             else:
@@ -146,157 +141,136 @@ def pixels(rows, y0):
     return "".join(out)
 
 
-def cactus(x, label, h):
-    t = GROUND - h
+def heart(x, y, s, fill):
+    return (f'<path transform="translate({x},{y}) scale({s})" fill="{fill}" '
+            f'd="M0,3 C0,-1 5,-1 5,3 C5,-1 10,-1 10,3 C10,7 5,9 5,11 C5,9 0,7 0,3Z"/>')
+
+
+def tulip(x, color):
+    g = GROUND
     return (f'<g transform="translate({x},0)">'
-            f'<rect class="cac" x="-7" y="{t}" width="14" height="{h}" rx="3"/>'
-            f'<rect class="cac" x="-19" y="{t+14}" width="8" height="20" rx="3"/>'
-            f'<rect class="cac" x="-19" y="{t+28}" width="14" height="7" rx="2"/>'
-            f'<rect class="cac" x="11" y="{t+8}" width="8" height="18" rx="3"/>'
-            f'<rect class="cac" x="5" y="{t+21}" width="14" height="7" rx="2"/>'
-            f'<text class="bug" x="0" y="{t-10}" text-anchor="middle">{label}</text></g>')
+            f'<path d="M0,{g} Q1,{g-12} 0,{g-22}" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
+            f'<path d="M0,{g-6} Q-9,{g-12} -10,{g-20} Q-2,{g-16} 0,{g-8}Z" fill="#b6dfc6"/>'
+            f'<path d="M-7,{g-30} Q-7,{g-20} 0,{g-19} Q7,{g-20} 7,{g-30} L4,{g-26} L0,{g-32} L-4,{g-26}Z" fill="{color}"/>'
+            f'</g>')
 
 
 def jump_keyframes():
-    # Obstacles cross the dino at 0.7s, 3.7s and 6.7s of the 9s loop.
+    # Tulips pass under the dino at 0.7s, 3.7s and 6.7s of the 9s loop.
     kf = []
     for c in (0.7, 3.7, 6.7):
         a, p, b = (c - .28) / 9 * 100, c / 9 * 100, (c + .28) / 9 * 100
         kf.append(f"{a-.01:.2f}%{{transform:translateY(0)}}"
                   f"{a:.2f}%{{transform:translateY(0);animation-timing-function:ease-out}}"
-                  f"{p:.2f}%{{transform:translateY(-72px);animation-timing-function:ease-in}}"
+                  f"{p:.2f}%{{transform:translateY(-54px);animation-timing-function:ease-in}}"
                   f"{b:.2f}%{{transform:translateY(0)}}")
     return "@keyframes jump{0%{transform:translateY(0)}" + "".join(kf) + "100%{transform:translateY(0)}}"
 
 
-def lang_panel(langs, x, y, w, h):
-    bx, bw = x + 16, w - 32
-    segs, off = [], bx
-    for i, (name, pct, color) in enumerate(langs):
-        sw = bw - (off - bx) if i == len(langs) - 1 else bw * pct / 100
-        segs.append(f'<rect x="{off:.1f}" y="{y+30}" width="{max(sw, 0):.1f}" height="8" fill="{color}"/>')
+def lang_block(langs, x, y, w):
+    shown = langs[:4]
+    rest = 100 - sum(p for _, p, _ in shown)
+    items = [(n, p, PASTELS[i]) for i, (n, p, _) in enumerate(shown)]
+    if rest >= 0.05:
+        items.append(("Other", rest, PASTELS[5]))
+    segs, off = [], x
+    for i, (n, p, c) in enumerate(items):
+        sw = w - (off - x) if i == len(items) - 1 else w * p / 100
+        segs.append(f'<rect x="{off:.1f}" y="{y}" width="{max(sw, 0):.1f}" height="6" fill="{c}"/>')
         off += sw
-    legend = []
-    for i, (name, pct, color) in enumerate(langs):
-        lx, ly = x + 16 + (i % 3) * ((w - 32) / 3), y + 56 + (i // 3) * 17
-        legend.append(f'<circle cx="{lx+4:.1f}" cy="{ly-4}" r="4" fill="{color}"/>'
-                      f'<text class="lg" x="{lx+13:.1f}" y="{ly}">{escape(name)} {pct:.1f}%</text>')
-    return (f'<rect class="chip" x="{x}" y="{y}" width="{w}" height="{h}" rx="10"/>'
-            f'<text class="ck" x="{x+16}" y="{y+19}">// MOST USED LANGUAGES</text>'
-            f'<clipPath id="bar"><rect x="{bx}" y="{y+30}" width="{bw}" height="8" rx="4"/></clipPath>'
+    legend, lx = [], x
+    for n, p, c in items:
+        label = f"{escape(n)} {p:.0f}%"
+        legend.append(f'<circle cx="{lx+3}" cy="{y+21}" r="3" fill="{c}"/>'
+                      f'<text class="lg" x="{lx+10}" y="{y+25}">{label}</text>')
+        lx += len(label) * 6.2 + 20
+    return (f'<text class="lab" x="{x}" y="{y-10}">languages</text>'
+            f'<clipPath id="bar"><rect x="{x}" y="{y}" width="{w}" height="6" rx="3"/></clipPath>'
             f'<g clip-path="url(#bar)">{"".join(segs)}</g>{"".join(legend)}')
 
 
-def tile(x, y, w, h, label, value, sub, cls="cv2", flame=False):
-    cx = x + w / 2
-    f = ""
-    if flame:
-        f = (f'<g class="flame" transform="translate({cx+22:.1f},{y+24})">'
-             f'<path d="M0,16 C-8,12 -7,3 -2,-4 C-1,2 2,3 3,0 C7,5 8,13 0,16Z" fill="#ffb627"/>'
-             f'<path d="M0,15 C-3,13 -3,9 0,5 C3,9 3,13 0,15Z" fill="#ff2bd6"/></g>')
-    return (f'<rect class="chip" x="{x}" y="{y}" width="{w}" height="{h}" rx="10"/>'
-            f'<text class="ck" x="{cx:.1f}" y="{y+17}" text-anchor="middle">{label}</text>'
-            f'<text class="{cls}" x="{cx-(8 if flame else 0):.1f}" y="{y+42}" text-anchor="middle">{value}</text>{f}'
-            f'<text class="ds" x="{cx:.1f}" y="{y+58}" text-anchor="middle">{sub}</text>')
+def stat(x, y, value, label):
+    return (f'<text class="num" x="{x}" y="{y}">{value}</text>'
+            f'<text class="lab" x="{x}" y="{y+17}">{label}</text>')
+
+
+def cloud(cx, cy, sc, cls):
+    return (f'<g class="{cls}"><g transform="translate({cx},{cy}) scale({sc})" fill="#ffffff" opacity=".75">'
+            f'<ellipse cx="0" cy="0" rx="34" ry="12"/><ellipse cx="-12" cy="-8" rx="14" ry="11"/>'
+            f'<ellipse cx="10" cy="-10" rx="18" ry="14"/></g></g>')
 
 
 def render(langs, s):
     today = s["today"]
-    cacti = "".join(cactus(200 + 300 * i + 900 * k, l, h) for k in (0, 1)
-                    for i, (l, h) in enumerate([("504", 48), ("CORS", 42), ("BROKEN PIPE", 52)]))
-    grid = "".join(f'<line x1="{450+i*14}" y1="{GROUND}" x2="{450+i*95}" y2="{H}"/>' for i in range(-12, 13))
-    grid += "".join(f'<line x1="0" y1="{GROUND+o}" x2="{W}" y2="{GROUND+o}"/>' for o in (6, 14, 26, 44))
-    stars = "".join(f'<circle class="star" cx="{x}" cy="{y}" r="{r}" style="animation-delay:{d}s"/>'
-                    for x, y, r, d in [(40, 30, 1.2, 0), (130, 80, 1, 1.2), (260, 22, 1.4, .6), (380, 60, 1, 2),
-                                       (470, 18, 1.2, 1.5), (420, 150, 1, .3), (610, 40, 1.3, 2.4),
-                                       (870, 112, 1, .9), (330, 170, 1, 2.8), (240, 230, 1.2, .2),
-                                       (60, 200, 1, 1.7), (400, 280, 1.1, 2.1)])
-    chips, cx = "", 575
-    for k, v in [("SINCE", "2022"), ("TOPTAL", "$50K+"), ("UPWORK JSS", "100%")]:
-        w = max(len(k), len(v)) * 8.6 + 26
-        chips += (f'<g transform="translate({cx:.0f},24)"><rect class="chip" width="{w:.0f}" height="44" rx="8"/>'
-                  f'<text class="ck" x="13" y="18">{k}</text><text class="cv" x="13" y="36">{v}</text></g>')
-        cx += w + 10
+    colors = ["#f4a7bb", "#b8a9e3", "#ffb4a2"]
+    flowers = "".join(tulip(200 + 300 * i + 900 * k, colors[i]) for k in (0, 1) for i in range(3))
+    sx = 520
 
-    px, pw = 470, 410
-    tw = (pw - 20) / 3
-    ty = 196
-    tiles = (tile(px, ty, tw, 66, "CONTRIBUTIONS", s["total"], f"{md(s['since'], today)} – now")
-             + tile(px + tw + 10, ty, tw, 66, "CURRENT STREAK", s["current"],
-                    rng(s["current_start"], s["current_end"], today), "cv2 hot", flame=True)
-             + tile(px + 2 * (tw + 10), ty, tw, 66, "LONGEST STREAK", s["longest"],
-                    rng(s["longest_start"], s["longest_end"], today)))
+    def days(n):
+        return "day" if n == 1 else "days"
 
+    best = f"best · {md(s['longest_start'], today)}" if s["longest_start"] else "best"
+    stats = (lang_block(langs, sx, 66, 340)
+             + stat(sx, 140, s["total"], f"contributions since {s['since'].year}")
+             + stat(sx + 175, 140, s["current"], f"{days(s['current'])} streak")
+             + stat(sx + 270, 140, s["longest"], best))
     dino_h = (len(BODY) + 3) * PX
+    hearts = "".join(f'<g class="float" style="animation-delay:{d}s">{heart(x, GROUND - dino_h - 8, sc, c)}</g>'
+                     for x, d, sc, c in [(160, 0, 1, "#f4a7bb"), (172, 1.5, .8, "#e89bb5"), (150, 3, .9, "#f7b9c9")])
+
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
 <defs>
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05060f"/><stop offset=".75" stop-color="#140a2e"/><stop offset="1" stop-color="#2a0d45"/></linearGradient>
-<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset="1" stop-color="#ffb627"/></linearGradient>
-<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<clipPath id="frame"><rect width="{W}" height="{H}" rx="18"/></clipPath>
-<clipPath id="sunclip"><rect x="0" y="0" width="{W}" height="{GROUND}"/></clipPath>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf6f9"/><stop offset=".6" stop-color="#fbe4ec"/><stop offset="1" stop-color="#ece3f6"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6c9"/><stop offset="1" stop-color="#f9b9cc"/></linearGradient>
+<clipPath id="frame"><rect width="{W}" height="{H}" rx="20"/></clipPath>
+<clipPath id="above"><rect width="{W}" height="{GROUND}"/></clipPath>
 <style>
-text{{font-family:"JetBrains Mono","Fira Code",Consolas,"Courier New",monospace}}
-.title{{font-size:24px;font-weight:700;fill:#e6f7ff;letter-spacing:2px}}
-.subt{{font-size:13px;fill:#7dd3fc;letter-spacing:3px}}
-.status{{font-size:12px;fill:#39ff9f;letter-spacing:2px}}
-.chip{{fill:#0b1530;fill-opacity:.85;stroke:#22d3ee;stroke-opacity:.6}}
-.ck{{font-size:10px;fill:#7dd3fc;letter-spacing:1.5px}}
-.cv{{font-size:14px;font-weight:700;fill:#ffffff}}
-.cv2{{font-size:24px;font-weight:700;fill:#e6f7ff}}
-.hot{{fill:#ffb627}}
-.ds{{font-size:10px;fill:#a5b4fc}}
-.lg{{font-size:11px;fill:#dbe4f0}}
-.dino{{fill:#39ff9f}}
-.cac{{fill:#ff2bd6}}
-.bug{{font-size:11px;font-weight:700;fill:#ffb627;letter-spacing:1px}}
-.grid line{{stroke:#ff2bd6;stroke-opacity:.35;stroke-width:1}}
-.ground{{stroke:#22d3ee;stroke-width:2}}
-.cap{{font-size:11px;fill:#a5b4fc;letter-spacing:2px}}
-.star{{fill:#fff;animation:tw 3s ease-in-out infinite}}
-@keyframes tw{{0%,100%{{opacity:.2}}50%{{opacity:1}}}}
+.name{{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:36px;fill:#6b4a5e}}
+.sub,.cap,.lab,.lg,.num,.small{{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif}}
+.sub{{font-size:13px;fill:#9a7a8c;letter-spacing:3px}}
+.cap{{font-size:13px;fill:#b07c95}}
+.small{{font-size:12px;fill:#9a7a8c}}
+.lab{{font-size:11px;fill:#a88a9b;letter-spacing:.5px}}
+.lg{{font-size:11px;fill:#7d6272}}
+.num{{font-size:26px;font-weight:600;fill:#6b4a5e}}
+.dino{{fill:#8fd3c1}}
+.blush{{fill:#f4a7bb}}
 .world{{animation:scroll 9s linear infinite}}
 @keyframes scroll{{from{{transform:translateX(0)}}to{{transform:translateX(-900px)}}}}
 .jumper{{animation:jump 9s linear infinite}}
 {jump_keyframes()}
-.legA{{animation:legA .24s steps(1) infinite}}
-.legB{{animation:legB .24s steps(1) infinite}}
+.legA{{animation:legA .3s steps(1) infinite}}
+.legB{{animation:legB .3s steps(1) infinite}}
 @keyframes legA{{0%{{opacity:1}}50%{{opacity:0}}}}
 @keyframes legB{{0%{{opacity:0}}50%{{opacity:1}}}}
-.flame{{animation:fl .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center bottom}}
-@keyframes fl{{from{{opacity:.75}}to{{opacity:1}}}}
-.dash{{stroke:#22d3ee;stroke-width:2;stroke-dasharray:6 22;animation:dash .6s linear infinite}}
-@keyframes dash{{to{{stroke-dashoffset:-28}}}}
-.blink{{animation:bl 1.2s steps(1) infinite}}
-@keyframes bl{{50%{{opacity:0}}}}
-.scan{{fill:#22d3ee;opacity:.06;animation:scan 4s linear infinite}}
-@keyframes scan{{from{{transform:translateY(-20px)}}to{{transform:translateY({H}px)}}}}
+.float{{opacity:0;animation:float 4.5s ease-out infinite}}
+@keyframes float{{0%{{opacity:0;transform:translate(0,0)}}15%{{opacity:1}}100%{{opacity:0;transform:translate(14px,-70px)}}}}
+.drift1{{animation:drift 60s linear infinite}}
+.drift2{{animation:drift 90s linear infinite;animation-delay:-40s}}
+@keyframes drift{{from{{transform:translateX(0)}}to{{transform:translateX(-1100px)}}}}
+.beat{{animation:beat 1.6s ease-in-out infinite}}
+@keyframes beat{{0%,100%{{opacity:1}}15%{{opacity:.45}}30%{{opacity:1}}}}
 </style>
 </defs>
 <g clip-path="url(#frame)">
 <rect width="{W}" height="{H}" fill="url(#sky)"/>
-{stars}
-<g clip-path="url(#sunclip)" opacity=".5"><circle cx="760" cy="{GROUND+10}" r="70" fill="url(#sun)"/>
-<g fill="#140a2e"><rect x="680" y="{GROUND-34}" width="160" height="4"/><rect x="680" y="{GROUND-22}" width="160" height="6"/><rect x="680" y="{GROUND-10}" width="160" height="8"/></g></g>
-<g class="grid">{grid}</g>
-<line class="ground" x1="0" y1="{GROUND}" x2="{W}" y2="{GROUND}" filter="url(#glow)"/>
-<line class="dash" x1="0" y1="{GROUND+6}" x2="{W}" y2="{GROUND+6}"/>
+<g clip-path="url(#above)"><circle cx="760" cy="{GROUND + 18}" r="78" fill="url(#sun)" opacity=".75"/></g>
+{cloud(1000, 46, 1, "drift1")}{cloud(1150, 120, .7, "drift2")}
+<line x1="24" y1="{GROUND}" x2="{W - 24}" y2="{GROUND}" stroke="#e7b3c4" stroke-width="1.5" stroke-linecap="round"/>
 
-<text class="title" x="32" y="48" filter="url(#glow)">AYAZ.AHMAD<tspan fill="#ff2bd6">://</tspan>BACKEND</text>
-<text class="subt" x="32" y="72">PYTHON BACKEND ENGINEER</text>
-<text class="status" x="32" y="96"><tspan class="blink">●</tspan> SYSTEM ONLINE · APIs · QUEUES · INTEGRATIONS</text>
-<text class="cap" x="32" y="122">&gt; jumping over production bugs since 2022<tspan class="blink">_</tspan></text>
-{chips}
-{lang_panel(langs, px, 96, pw, 90)}
-{tiles}
+<text class="name" x="40" y="66">Ayaz Ahmad</text>
+<text class="sub" x="42" y="94">PYTHON BACKEND ENGINEER</text>
+<text class="cap" x="42" y="120">building calm, reliable backends since 2022 <tspan class="beat" fill="#f4a7bb">&#9829;</tspan></text>
+<text class="small" x="42" y="146">Toptal $50K+  ·  Upwork 100% job success</text>
+{stats}
 
-<g class="world" filter="url(#glow)">{cacti}</g>
-<g transform="translate(96,{GROUND-dino_h})" filter="url(#glow)"><g class="jumper"><g class="dino">
-{pixels(BODY, 0)}<g class="legA">{pixels(LEG_A, len(BODY))}</g><g class="legB">{pixels(LEG_B, len(BODY))}</g>
-</g></g></g>
-<rect class="scan" x="0" y="0" width="{W}" height="14"/>
+<g class="world">{flowers}</g>
+{hearts}
+<g transform="translate(96,{GROUND - dino_h})"><g class="jumper">
+<g class="dino">{pixels(BODY, 0)}<g class="legA">{pixels(LEG_A, len(BODY))}</g><g class="legB">{pixels(LEG_B, len(BODY))}</g></g>
+<g class="blush">{pixels(BODY, 0, "+")}</g>
+</g></g>
 </g>
-<rect x="1" y="1" width="{W-2}" height="{H-2}" rx="17" fill="none" stroke="#22d3ee" stroke-opacity=".5" stroke-width="2"/>
 </svg>
 '''
 
