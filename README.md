@@ -157,13 +157,13 @@ A Flask backend that powers a campaign automation dashboard integrated with **Go
 
 ```mermaid
 flowchart LR
-    UI[Dashboard Frontend] -- CORS / REST --> API[Flask API<br/>Gunicorn]
-    API --> DB[(MongoDB)]
-    API -- enqueue --> Q[(Redis)]
-    Q --> W[RQ Workers]
-    W -- scheduled jobs --> GHL[GoHighLevel /<br/>LeadConnector API]
+    UI["Dashboard Frontend"] -->|"CORS + REST"| API["Flask API on Gunicorn"]
+    API --> DB[("MongoDB")]
+    API -->|"enqueue"| Q[("Redis")]
+    Q --> W["RQ Workers"]
+    W -->|"scheduled jobs"| GHL["GoHighLevel / LeadConnector API"]
     W --> DB
-    Q --> MON[rq-dashboard]
+    Q --> MON["rq-dashboard"]
 ```
 
 ### 🔐 Secure File API — Flask
