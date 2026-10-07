@@ -1,22 +1,22 @@
 <!-- ===================== HEADER ===================== -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:3776AB&height=200&section=header&text=Ayaz%20Ahmad&fontSize=52&fontColor=ffffff&fontAlignY=36&desc=Python%20Backend%20Engineer&descAlignY=56&descSize=20&animation=fadeIn" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2a2140,50:6b4a5e,100:f4a7bb&height=200&section=header&text=Ayaz%20Ahmad&fontSize=52&fontColor=fbe4ec&fontAlignY=36&desc=Python%20Backend%20Engineer&descAlignY=56&descSize=20&animation=fadeIn" />
 
 <p align="center">
   <a href="https://github.com/Ayaz-Ahmad1">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3776AB&center=true&vCenter=true&width=650&lines=Python+Backend+Engineer+%F0%9F%90%8D;Django+%7C+DRF+%7C+Flask+%7C+FastAPI;REST+APIs+%2B+Third-party+Integrations;Redis+%7C+Celery+%7C+RQ+%7C+Background+Jobs;Automation+that+runs+while+you+sleep+%E2%9A%99%EF%B8%8F;Exploring+GenAI+for+real+business+problems+%F0%9F%A4%96" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=B07C95&center=true&vCenter=true&width=650&lines=Python+Backend+Engineer+%F0%9F%90%8D;Django+%7C+DRF+%7C+Flask+%7C+FastAPI;REST+APIs+%2B+Third-party+Integrations;Redis+%7C+Celery+%7C+RQ+%7C+Background+Jobs;Automation+that+runs+while+you+sleep+%E2%9A%99%EF%B8%8F;Exploring+GenAI+for+real+business+problems+%F0%9F%A4%96" alt="Typing SVG" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Ayaz-Ahmad1&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
-  <a href="https://www.linkedin.com/in/Ayaz-Ahmad1/"><img src="https://img.shields.io/badge/LinkedIn-Ayaz%20Ahmad-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="mailto:ezeecodes@gmail.com"><img src="https://img.shields.io/badge/Gmail-ezeecodes@gmail.com-D14836?style=flat&logo=gmail&logoColor=white" alt="Gmail" /></a>
-  <img src="https://img.shields.io/badge/Open%20to-Backend%20%26%20Automation%20work-2ea44f?style=flat" alt="Open to work" />
+  <img src="https://komarev.com/ghpvc/?username=Ayaz-Ahmad1&label=Profile%20views&color=b07c95&style=flat" alt="profile views" />
+  <a href="https://www.linkedin.com/in/Ayaz-Ahmad1/"><img src="https://img.shields.io/badge/LinkedIn-Ayaz%20Ahmad-4a3352?style=flat&logo=linkedin&logoColor=f4a7bb&labelColor=2a2140" alt="LinkedIn" /></a>
+  <a href="mailto:ezeecodes@gmail.com"><img src="https://img.shields.io/badge/Gmail-ezeecodes@gmail.com-4a3352?style=flat&logo=gmail&logoColor=f4a7bb&labelColor=2a2140" alt="Gmail" /></a>
+  <img src="https://img.shields.io/badge/Open%20to-Backend%20%26%20Automation%20work-4a3352?style=flat&labelColor=2a2140" alt="Open to work" />
 </p>
 
 ---
 
-## 🚀 About Me
+## ✦ About Me
 
 <img alt="skills" src="https://github.com/Ayaz-Ahmad1/Ayaz-Ahmad1/assets/86517672/4bc140dd-fa8f-4d72-8bc4-b9d1e07fd4eb" align="right" height="170">
 
@@ -49,82 +49,74 @@ class AyazAhmad:
 
 ---
 
-## 🛠️ Tech Stack
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,django,flask,fastapi,postgres,mysql,mongodb,redis,graphql,elasticsearch&perline=10" />
-    <br/>
-    <img src="https://skillicons.dev/icons?i=docker,linux,git,github,firebase,html,css,js&perline=10" />
-  </a>
-</p>
+## ✦ Tech Stack
 
 <details open>
-<summary><b>🐍 Backend & APIs</b></summary>
+<summary><b>✦ Backend & APIs</b></summary>
 <br/>
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
-  <img src="https://img.shields.io/badge/DRF-A30000?style=for-the-badge&logo=django&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/REST_APIs-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
-  <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-2a2140?style=for-the-badge&logo=python&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/Django-2a2140?style=for-the-badge&logo=django&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/DRF-2a2140?style=for-the-badge&logo=django&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/Flask-2a2140?style=for-the-badge&logo=flask&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/FastAPI-2a2140?style=for-the-badge&logo=fastapi&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/REST_APIs-2a2140?style=for-the-badge&logo=postman&logoColor=f4a7bb" />
+  <img src="https://img.shields.io/badge/GraphQL-2a2140?style=for-the-badge&logo=graphql&logoColor=f4a7bb" />
 </p>
 </details>
 
 <details open>
-<summary><b>🗄️ Databases & Search</b></summary>
+<summary><b>✦ Databases & Search</b></summary>
 <br/>
 <p>
-  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-2a2140?style=for-the-badge&logo=postgresql&logoColor=c9a3e0" />
+  <img src="https://img.shields.io/badge/MySQL-2a2140?style=for-the-badge&logo=mysql&logoColor=c9a3e0" />
+  <img src="https://img.shields.io/badge/MongoDB-2a2140?style=for-the-badge&logo=mongodb&logoColor=c9a3e0" />
+  <img src="https://img.shields.io/badge/Elasticsearch-2a2140?style=for-the-badge&logo=elasticsearch&logoColor=c9a3e0" />
 </p>
 </details>
 
 <details open>
-<summary><b>⚙️ Background Jobs & Automation</b></summary>
+<summary><b>✦ Background Jobs & Automation</b></summary>
 <br/>
 <p>
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
-  <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" />
-  <img src="https://img.shields.io/badge/RQ-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
-  <img src="https://img.shields.io/badge/APScheduler-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/GoHighLevel_API-1B6AC9?style=for-the-badge&logo=webhook&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-2a2140?style=for-the-badge&logo=redis&logoColor=8fd3c1" />
+  <img src="https://img.shields.io/badge/Celery-2a2140?style=for-the-badge&logo=celery&logoColor=8fd3c1" />
+  <img src="https://img.shields.io/badge/RQ-2a2140?style=for-the-badge&logo=redis&logoColor=8fd3c1" />
+  <img src="https://img.shields.io/badge/APScheduler-2a2140?style=for-the-badge&logo=python&logoColor=8fd3c1" />
+  <img src="https://img.shields.io/badge/GoHighLevel_API-2a2140?style=for-the-badge&logo=webhook&logoColor=8fd3c1" />
 </p>
 </details>
 
 <details open>
-<summary><b>🔐 Security, Testing & Realtime</b></summary>
+<summary><b>✦ Security, Testing & Realtime</b></summary>
 <br/>
 <p>
-  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSRF_%2F_bcrypt-555555?style=for-the-badge&logo=letsencrypt&logoColor=white" />
-  <img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" />
-  <img src="https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socket.io&logoColor=white" />
-  <img src="https://img.shields.io/badge/Scrapy-60A839?style=for-the-badge&logo=scrapy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/JWT-2a2140?style=for-the-badge&logo=jsonwebtokens&logoColor=ffc6a8" />
+  <img src="https://img.shields.io/badge/CSRF_%2F_bcrypt-2a2140?style=for-the-badge&logo=letsencrypt&logoColor=ffc6a8" />
+  <img src="https://img.shields.io/badge/pytest-2a2140?style=for-the-badge&logo=pytest&logoColor=ffc6a8" />
+  <img src="https://img.shields.io/badge/Socket.IO-2a2140?style=for-the-badge&logo=socket.io&logoColor=ffc6a8" />
+  <img src="https://img.shields.io/badge/Scrapy-2a2140?style=for-the-badge&logo=scrapy&logoColor=ffc6a8" />
+  <img src="https://img.shields.io/badge/Firebase-2a2140?style=for-the-badge&logo=firebase&logoColor=ffc6a8" />
 </p>
 </details>
 
 <details open>
-<summary><b>☁️ DevOps & Deployment</b></summary>
+<summary><b>✦ DevOps & Deployment</b></summary>
 <br/>
 <p>
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white" />
-  <img src="https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-2a2140?style=for-the-badge&logo=linux&logoColor=e6c9a8" />
+  <img src="https://img.shields.io/badge/Docker-2a2140?style=for-the-badge&logo=docker&logoColor=e6c9a8" />
+  <img src="https://img.shields.io/badge/Gunicorn-2a2140?style=for-the-badge&logo=gunicorn&logoColor=e6c9a8" />
+  <img src="https://img.shields.io/badge/DigitalOcean-2a2140?style=for-the-badge&logo=digitalocean&logoColor=e6c9a8" />
+  <img src="https://img.shields.io/badge/Git-2a2140?style=for-the-badge&logo=git&logoColor=e6c9a8" />
+  <img src="https://img.shields.io/badge/GitHub-2a2140?style=for-the-badge&logo=github&logoColor=e6c9a8" />
 </p>
 </details>
 
 ---
 
-## 💼 Experience
+## ✦ Experience
 
 **🐍 Python Developer @ Webbuggs** &nbsp;·&nbsp; *Sep 2022 – Oct 2024*
 
@@ -137,14 +129,14 @@ class AyazAhmad:
 **🌍 Freelance Backend Developer** &nbsp;·&nbsp; *Upwork & Toptal*
 
 <p>
-  <img src="https://img.shields.io/badge/Upwork-%245K%2B_earned-14A800?style=for-the-badge&logo=upwork&logoColor=white" />
-  <img src="https://img.shields.io/badge/Job_Success-100%25-14A800?style=for-the-badge&logo=upwork&logoColor=white" />
-  <img src="https://img.shields.io/badge/Toptal-%2450K%2B_earned-204ECF?style=for-the-badge&logo=toptal&logoColor=white" />
+  <img src="https://img.shields.io/badge/Upwork-%245K%2B_earned-4a3352?style=for-the-badge&logo=upwork&logoColor=f4a7bb&labelColor=2a2140" />
+  <img src="https://img.shields.io/badge/Job_Success-100%25-4a3352?style=for-the-badge&logo=upwork&logoColor=f4a7bb&labelColor=2a2140" />
+  <img src="https://img.shields.io/badge/Toptal-%2450K%2B_earned-4a3352?style=for-the-badge&logo=toptal&logoColor=f4a7bb&labelColor=2a2140" />
 </p>
 
 ---
 
-## 🏗️ Featured Projects
+## ✦ Featured Projects
 
 ### ⚡ Versatile Acq — Automation Dashboard
 A Flask backend that powers a campaign automation dashboard integrated with **GoHighLevel / LeadConnector**.
@@ -175,13 +167,13 @@ A **Django 4.2 / Python 3.10** platform for HR evaluation workflows.
 
 ---
 
-## 🤖 What I'm Building Next
+## ✦ What I'm Building Next
 
 Combining my backend, API and automation background with **GenAI**: finding problems that keep coming up in client work and turning them into reliable, reusable software.
 
 ---
 
-## 🦖 System Status
+## ✦ System Status
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/dino-hud-dark.svg" />
@@ -196,14 +188,14 @@ Combining my backend, API and automation background with **GenAI**: finding prob
 
 ---
 
-## 🤝 Connect With Me
+## ✦ Connect With Me
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/Ayaz-Ahmad1/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:ezeecodes@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/Ayaz-Ahmad1"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/Ayaz-Ahmad1/"><img src="https://img.shields.io/badge/LinkedIn-2a2140?style=for-the-badge&logo=linkedin&logoColor=f4a7bb" /></a>
+  <a href="mailto:ezeecodes@gmail.com"><img src="https://img.shields.io/badge/Email-2a2140?style=for-the-badge&logo=gmail&logoColor=f4a7bb" /></a>
+  <a href="https://github.com/Ayaz-Ahmad1"><img src="https://img.shields.io/badge/GitHub-2a2140?style=for-the-badge&logo=github&logoColor=f4a7bb" /></a>
 </p>
 
 <p align="center"><i>💡 Need a reliable Python backend, API integration or automation pipeline? Let's talk.</i></p>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:3776AB,50:203a43,100:0f2027&height=120&section=footer" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:f4a7bb,50:6b4a5e,100:2a2140&height=120&section=footer" />
