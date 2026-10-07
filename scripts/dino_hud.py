@@ -123,7 +123,7 @@ BODY = [
 ]
 LEG_A = ["....##...##.......", "....#.....#.......", "....##....##......"]
 LEG_B = ["....##.##.........", "....#....#........", "....##...##......."]
-PASTELS = ["#7a64c2", "#9f8bd6", "#b8a9e3", "#c9b8f0", "#ddd2f7", "#ebe5fa"]
+PASTELS = ["#f4a7bb", "#b8a9e3", "#9fd8cb", "#ffd29d", "#a7c7f2", "#d9d3e3"]
 
 
 def pixels(rows, y0, ch="#"):
@@ -149,8 +149,8 @@ def heart(x, y, s, fill):
 def tulip(x, color):
     g = GROUND
     return (f'<g transform="translate({x},0)">'
-            f'<path d="M0,{g} Q1,{g-12} 0,{g-22}" stroke="#a99bd3" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
-            f'<path d="M0,{g-6} Q-9,{g-12} -10,{g-20} Q-2,{g-16} 0,{g-8}Z" fill="#c3b8e6"/>'
+            f'<path d="M0,{g} Q1,{g-12} 0,{g-22}" stroke="#9fcfb4" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
+            f'<path d="M0,{g-6} Q-9,{g-12} -10,{g-20} Q-2,{g-16} 0,{g-8}Z" fill="#b6dfc6"/>'
             f'<path d="M-7,{g-30} Q-7,{g-20} 0,{g-19} Q7,{g-20} 7,{g-30} L4,{g-26} L0,{g-32} L-4,{g-26}Z" fill="{color}"/>'
             f'</g>')
 
@@ -201,12 +201,12 @@ def cloud(cx, cy, sc, cls, op):
 
 
 THEMES = {
-    "light": {"sky": ("#faf8fe", "#efe9fb", "#e2d9f5"), "sun": ("#e6dcfa", "#c9b8f0"), "sunop": ".8",
-              "ink": "#4a3b78", "soft": "#7d6eaa", "accent": "#8a74c9", "muted": "#9a8cc0",
-              "legend": "#5b4b8a", "ground": "#c9b8f0", "cloud": ".8", "stars": 0},
-    "dark": {"sky": ("#15122a", "#211b3d", "#2f2552"), "sun": ("#ece6fa", "#b8a9e3"), "sunop": ".3",
-             "ink": "#ece6fa", "soft": "#b9addb", "accent": "#c9b8f0", "muted": "#9d90c8",
-             "legend": "#ddd5f5", "ground": "#5b4b8a", "cloud": ".10", "stars": 14},
+    "light": {"sky": ("#fdf6f9", "#fbe4ec", "#ece3f6"), "sun": ("#ffd6c9", "#f9b9cc"), "sunop": ".75",
+              "ink": "#6b4a5e", "soft": "#9a7a8c", "accent": "#b07c95", "muted": "#a88a9b",
+              "legend": "#7d6272", "ground": "#e7b3c4", "cloud": ".75", "stars": 0},
+    "dark": {"sky": ("#17142a", "#251d3d", "#3a2748"), "sun": ("#fbe4ec", "#d8b4e2"), "sunop": ".35",
+             "ink": "#fbe4ec", "soft": "#c9aec0", "accent": "#f4a7bb", "muted": "#a993b4",
+             "legend": "#e2cfdb", "ground": "#7a5878", "cloud": ".10", "stars": 14},
 }
 STAR_SPOTS = [(60, 30), (180, 160), (300, 22), (420, 150), (470, 34), (610, 186), (700, 30), (860, 110),
               (380, 196), (250, 200), (40, 196), (880, 190), (560, 20), (820, 24)]
@@ -214,7 +214,7 @@ STAR_SPOTS = [(60, 30), (180, 160), (300, 22), (420, 150), (470, 34), (610, 186)
 
 def render(langs, s, t):
     today = s["today"]
-    colors = ["#9f8bd6", "#c9b8f0", "#b8a9e3"]
+    colors = ["#f4a7bb", "#b8a9e3", "#ffb4a2"]
     flowers = "".join(tulip(200 + 300 * i + 900 * k, colors[i]) for k in (0, 1) for i in range(3))
     sx = 520
 
@@ -230,7 +230,7 @@ def render(langs, s, t):
                     for i, (x, y) in enumerate(STAR_SPOTS[:t["stars"]]))
     dino_h = (len(BODY) + 3) * PX
     hearts = "".join(f'<g class="float" style="animation-delay:{d}s">{heart(x, GROUND - dino_h - 8, sc, c)}</g>'
-                     for x, d, sc, c in [(160, 0, 1, "#b8a9e3"), (172, 1.5, .8, "#9f8bd6"), (150, 3, .9, "#c9b8f0")])
+                     for x, d, sc, c in [(160, 0, 1, "#f4a7bb"), (172, 1.5, .8, "#e89bb5"), (150, 3, .9, "#f7b9c9")])
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
 <defs>
@@ -247,8 +247,8 @@ def render(langs, s, t):
 .lab{{font-size:11px;fill:{t['muted']};letter-spacing:.5px}}
 .lg{{font-size:11px;fill:{t['legend']}}}
 .num{{font-size:26px;font-weight:600;fill:{t['ink']}}}
-.dino{{fill:#9f8bd6}}
-.blush{{fill:#f2b8d2}}
+.dino{{fill:#8fd3c1}}
+.blush{{fill:#f4a7bb}}
 .star{{fill:#fff3f8;animation:tw 3.2s ease-in-out infinite}}
 @keyframes tw{{0%,100%{{opacity:.25}}50%{{opacity:.95}}}}
 .world{{animation:scroll 9s linear infinite}}
@@ -277,7 +277,7 @@ def render(langs, s, t):
 
 <text class="name" x="40" y="58">Ayaz Ahmad</text>
 <text class="sub" x="42" y="84">PYTHON BACKEND ENGINEER</text>
-<text class="cap" x="42" y="108">building calm, reliable backends since 2022 <tspan class="beat" fill="#9f8bd6">&#9829;</tspan></text>
+<text class="cap" x="42" y="108">building calm, reliable backends since 2022 <tspan class="beat" fill="#f4a7bb">&#9829;</tspan></text>
 <text class="small" x="42" y="130">Toptal $50K+  ·  Upwork 100% job success</text>
 {stats}
 
