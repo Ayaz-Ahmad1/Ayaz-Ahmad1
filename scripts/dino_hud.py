@@ -13,8 +13,8 @@ from xml.sax.saxutils import escape
 USER = os.environ.get("GH_USER", "Ayaz-Ahmad1")
 OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "dino-hud.svg")
 
-W, H = 900, 290
-GROUND = 258
+W, H = 900, 310
+GROUND = 278
 PX = 4
 
 
@@ -210,10 +210,10 @@ def render(langs, s):
         return "day" if n == 1 else "days"
 
     best = f"best · {md(s['longest_start'], today)}" if s["longest_start"] else "best"
-    stats = (lang_block(langs, sx, 66, 340)
-             + stat(sx, 140, s["total"], f"contributions since {s['since'].year}")
-             + stat(sx + 175, 140, s["current"], f"{days(s['current'])} streak")
-             + stat(sx + 270, 140, s["longest"], best))
+    stats = (lang_block(langs, sx, 58, 340)
+             + stat(sx, 128, s["total"], f"contributions since {s['since'].year}")
+             + stat(sx + 175, 128, s["current"], f"{days(s['current'])} streak")
+             + stat(sx + 270, 128, s["longest"], best))
     dino_h = (len(BODY) + 3) * PX
     hearts = "".join(f'<g class="float" style="animation-delay:{d}s">{heart(x, GROUND - dino_h - 8, sc, c)}</g>'
                      for x, d, sc, c in [(160, 0, 1, "#f4a7bb"), (172, 1.5, .8, "#e89bb5"), (150, 3, .9, "#f7b9c9")])
@@ -258,10 +258,10 @@ def render(langs, s):
 {cloud(1000, 46, 1, "drift1")}{cloud(1150, 120, .7, "drift2")}
 <line x1="24" y1="{GROUND}" x2="{W - 24}" y2="{GROUND}" stroke="#e7b3c4" stroke-width="1.5" stroke-linecap="round"/>
 
-<text class="name" x="40" y="66">Ayaz Ahmad</text>
-<text class="sub" x="42" y="94">PYTHON BACKEND ENGINEER</text>
-<text class="cap" x="42" y="120">building calm, reliable backends since 2022 <tspan class="beat" fill="#f4a7bb">&#9829;</tspan></text>
-<text class="small" x="42" y="146">Toptal $50K+  ·  Upwork 100% job success</text>
+<text class="name" x="40" y="58">Ayaz Ahmad</text>
+<text class="sub" x="42" y="84">PYTHON BACKEND ENGINEER</text>
+<text class="cap" x="42" y="108">building calm, reliable backends since 2022 <tspan class="beat" fill="#f4a7bb">&#9829;</tspan></text>
+<text class="small" x="42" y="130">Toptal $50K+  ·  Upwork 100% job success</text>
 {stats}
 
 <g class="world">{flowers}</g>
